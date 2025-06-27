@@ -31,7 +31,7 @@ const BlogCard = ({ post }) => {
   };
 
   return (
-    <div className="  backdrop-blur-md p-6 rounded-lg shadow-lg text-white">
+    <div className=" backdrop-blur-md p-6 rounded-lg shadow-lg text-white">
       <img
         src={post.image}
         alt={post.title}

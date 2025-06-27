@@ -3,18 +3,18 @@ import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className=" bg-gradient-to-br from-blue-800 to-purple-900 backdrop-blur-md text-white py-10 ">
+    <footer className=" bg-gradient-to-t from-blue-500 to-black backdrop-blur-md text-white py-10 ">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Links Section */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold mb-4 border-b-2 border-blue-300 pb-1">
-              پیوندها
+              Link
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/" className="hover:text-gray-200 transition-colors">
-                  خانه
+                  Home
                 </Link>
               </li>
               <li>
@@ -22,7 +22,7 @@ const Footer = () => {
                   to="/portfolio"
                   className="hover:text-gray-200 transition-colors"
                 >
-                  نمونه کار
+                  our Work
                 </Link>
               </li>
               <li>
@@ -30,7 +30,7 @@ const Footer = () => {
                   to="/blog"
                   className="hover:text-gray-200 transition-colors"
                 >
-                  بلاگ
+                  blog
                 </Link>
               </li>
               <li>
@@ -38,7 +38,7 @@ const Footer = () => {
                   to="/skills"
                   className="hover:text-gray-200 transition-colors"
                 >
-                  مهارت‌ها
+                  Skills
                 </Link>
               </li>
             </ul>
@@ -70,12 +70,12 @@ const Footer = () => {
               <li className="flex items-center gap-3 hover:text-gray-200 transition-colors">
                 <FaGithub className="text-xl" />
                 <a
-                  href="https://github.com/flexdev"
+                  href="https://github.com/parhammahdavinia"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors"
                 >
-                  گیت‌هاب
+                  GitHub
                 </a>
               </li>
             </ul>
@@ -84,7 +84,7 @@ const Footer = () => {
           {/* About Section */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold mb-4 border-b-2 border-blue-300 pb-1">
-              درباره FlexDev
+              About Pmcode
             </h3>
             <p className="text-sm text-gray-200 text-center md:text-left max-w-xs">
               FlexDev یک پلتفرم برای ارائه خدمات توسعه وب و نمایش پروژه‌های
@@ -96,7 +96,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-8 border-t border-gray-500/30 pt-4 text-center">
           <p className="text-sm text-gray-300">
-            © {new Date().getFullYear()} FlexDev. تمامی حقوق محفوظ است.
+            © {new Date().getFullYear()}All right reserved to PMcode
           </p>
         </div>
       </div>

@@ -1,7 +1,0 @@
-@import "tailwindcss";
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
-@font-face {
-  font-family: "Vazir";
-  src: url("/path/to/vazir-font.ttf") format("truetype");
-}

@@ -15,7 +15,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-800 to-purple-900 py-16">
+    <div className="min-h-screen bg-gradient-to-t from-blue-500 to-black py-[10em]">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl text-amber-50 font-bold text-center mb-8">
           بلاگ

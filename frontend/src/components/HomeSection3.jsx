@@ -12,7 +12,7 @@ const HomeSection3 = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-800 to-purple-900 text-white text-center   h-screen  overflow-hidden relative">
+    <section className="py-16 bg-gradient-to-b from-blue-500 to-black text-white text-center   h-screen  overflow-hidden relative">
       <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center gap-8">
         <h2 className="text-4xl font-extrabold tracking-wide">
           آخرین پروژه‌ها

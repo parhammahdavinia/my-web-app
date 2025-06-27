@@ -7,33 +7,38 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-gradient-to-br from-blue-800 to-purple-900 backdrop-blur-md text-white py-4 sticky top-0 z-50 mx-auto ">
+      <header className="vazir  backdrop-blur-md  py-4 fixed inset-0 h-[4em] top-5  shadow-cyan-300 shadow-lg z-50 mx-auto opacity-90  rounded-3xl w-[80%]   bg-gradient-to-r from-blue-500 to-black ">
         <div className="container mx-auto flex justify-between items-center px-6">
           {/* Logo */}
-          <div className="text-2xl font-bold">FlexDev</div>
+          <div className="text-2xl font-bold flex flex-row gap-1">
+            <div className="bg-white px-1 py-0.5  text-blue-700 rounded-sm">
+              PM
+            </div>
+            <div className="text-white">code</div>
+          </div>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex justify-center items-center gap-6 space-x-6 space-x-reverse">
+          <nav className="hidden md:flex justify-center items-center gap-6 space-x-6  text-gray-100">
             <Link
               to="/"
               className="hover:text-gray-200 transition-colors flex items-center"
             >
-              <HiHome className="text-xl mr-1" /> خانه
+              Home
             </Link>
             <Link
               to="/portfolio"
               className="hover:text-gray-200 transition-colors"
             >
-              نمونه کار
+              our work
             </Link>
             <Link to="/blog" className="hover:text-gray-200 transition-colors">
-              بلاگ
+              Blog
             </Link>
             <Link
               to="/skills"
               className="hover:text-gray-200 transition-colors"
             >
-              مهارت‌ها
+              Skills
             </Link>
           </nav>
 
@@ -49,7 +54,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <nav className="fixed inset-0 h-screen w-full bg-gray-900/90 backdrop-blur-sm flex flex-col z-50 transform transition-transform duration-300 ease-in-out translate-x-0">
+        <nav className="fixed inset-0 h-screen w-full text-white vazir bg-gray-900/90 backdrop-blur-sm flex flex-col z-50 transform transition-transform duration-300 ease-in-out translate-x-0">
           <button
             className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors"
             onClick={() => setIsMenuOpen(false)}
@@ -63,7 +68,7 @@ const Header = () => {
               className="flex items-center gap-2 hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              <HiHome className="text-xl" /> خانه
+              <HiHome className="text-xl " /> خانه
             </Link>
             <Link
               to="/portfolio"

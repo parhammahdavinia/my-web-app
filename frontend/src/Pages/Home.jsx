@@ -6,7 +6,7 @@ import HomeSection3 from "../components/HomeSection3";
 
 const Home = () => {
   return (
-    <div className=" ">
+    <div className="vazir  ">
       <HomeSection1 />
 
       <HomeSection2 />
