@@ -2,11 +2,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Header from "./components/Header";
-import Home from "./pages/Home";
+import Home from "./Pages/Home";
 import About from "./Pages/About";
-import Blog from "./pages/Blog";
+import Blog from "./Pages/Blog";
 import BlogDetail from "./Pages/BlogDetail";
-import Skills from "./pages/Skills";
+import Skills from "./Pages/Skills";
 
 const App = () => {
   return (
