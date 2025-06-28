@@ -10,11 +10,11 @@ const Header = () => {
       <header className="vazir  backdrop-blur-md  py-4 fixed inset-0 h-[4em] top-5  shadow-cyan-300 shadow-lg z-50 mx-auto opacity-90  rounded-3xl w-[80%]   bg-gradient-to-r from-blue-500 to-black ">
         <div className="container mx-auto flex justify-between items-center px-6">
           {/* Logo */}
-          <div className="text-2xl font-bold flex flex-row gap-1">
+          <div className="text-lg font-bold flex flex-row gap-1">
             <div className="bg-white px-1 py-0.5  text-blue-700 rounded-sm">
               PM
             </div>
-            <div className="text-white">code</div>
+            <div className="text-white ">code</div>
           </div>
 
           {/* Desktop Menu */}
@@ -68,28 +68,28 @@ const Header = () => {
               className="flex items-center gap-2 hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              <HiHome className="text-xl " /> خانه
+              Home
             </Link>
             <Link
               to="/portfolio"
               className="hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              نمونه کار
+              my work
             </Link>
             <Link
               to="/blog"
               className="hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              بلاگ
+              Blog
             </Link>
             <Link
               to="/skills"
               className="hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              مهارت‌ها
+              Skills
             </Link>
           </div>
         </nav>

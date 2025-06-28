@@ -6,7 +6,12 @@ import "swiper/css/pagination";
 const HomeSection3 = () => {
   // داده‌های پروژه‌ها
   const projects = [
-    { id: 1, title: "پروژه E-Commerce", description: "سایت فروشگاهی مدرن" },
+    {
+      id: 1,
+      title: "پروژه E-Commerce",
+      description: "سایت فروشگاهی مدرن",
+      image: "",
+    },
     { id: 2, title: "اپلیکیشن موبایل", description: "برنامه مدیریت کسب‌وکار" },
     { id: 3, title: "پلتفرم آموزشی", description: "سیستم یادگیری آنلاین" },
   ];
@@ -39,8 +44,8 @@ const HomeSection3 = () => {
 
         {/* Button */}
         <div className="mt-6">
-          <button className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1">
-            مشاهده همه پروژه‌ها
+          <button className="border-2 text-white hover:text-black  font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1">
+            See more
           </button>
         </div>
       </div>
