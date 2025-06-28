@@ -19,7 +19,7 @@ const HomeSection2 = () => {
       </h1>
       <img
         src="images/s2.png "
-        className="absolute inset-0 bg-contain   lg:shadow "
+        className="absolute inset-0 bg-contain  bottom-0  z-0 lg:shadow opacity-20  "
       />
       <div className="container mx-auto px-4">
         {/* Skills Grid */}

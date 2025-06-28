@@ -34,7 +34,7 @@ const HomeSection3 = () => {
       </h2>
       <img
         src="/images/4.png"
-        className="absolute bottom-0 bg-contain z-0 lg:shadow"
+        className="absolute bottom-0 bg-contain z-0 lg:shadow opacity-20"
         alt="Background decoration"
       />
       <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center gap-8">

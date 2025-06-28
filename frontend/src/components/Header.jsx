@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiHome, HiMenu, HiX } from "react-icons/hi";
+import { useLanguage } from "../contexts/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <>
@@ -23,32 +26,32 @@ const Header = () => {
               to="/"
               className="hover:text-gray-200 transition-colors flex items-center"
             >
-              Home
+              {t("home")}
             </Link>
-            <Link
-              to="/portfolio"
-              className="hover:text-gray-200 transition-colors"
-            >
-              our work
+            <Link to="/about" className="hover:text-gray-200 transition-colors">
+              {t("about")}
             </Link>
             <Link to="/blog" className="hover:text-gray-200 transition-colors">
-              Blog
+              {t("blog")}
             </Link>
             <Link
               to="/skills"
               className="hover:text-gray-200 transition-colors"
             >
-              Skills
+              {t("skills")}
             </Link>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white hover:text-gray-300 transition-colors"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
-          </button>
+          {/* Language Switcher & Mobile Menu Button */}
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+            <button
+              className="md:hidden text-white hover:text-gray-300 transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -68,29 +71,34 @@ const Header = () => {
               className="flex items-center gap-2 hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              {t("home")}
             </Link>
             <Link
-              to="/portfolio"
+              to="/about"
               className="hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              my work
+              {t("about")}
             </Link>
             <Link
               to="/blog"
               className="hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Blog
+              {t("blog")}
             </Link>
             <Link
               to="/skills"
               className="hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Skills
+              {t("skills")}
             </Link>
+
+            {/* Language Switcher in Mobile Menu */}
+            <div className="mt-8">
+              <LanguageSwitcher />
+            </div>
           </div>
         </nav>
       )}
