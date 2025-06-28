@@ -64,7 +64,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="transition-colors"
                 >
-                  لینکدین
+                  linkedin
                 </a>
               </li>
               <li className="flex items-center justify-center gap-3 hover:text-gray-200 transition-colors">

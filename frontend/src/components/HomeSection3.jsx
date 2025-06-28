@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Virtual, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
+
 import "swiper/css/pagination";
 
 const HomeSection3 = () => {

@@ -13,7 +13,7 @@ const HomeSection1 = () => {
       /> */}
 
       <div className="relative z-30  flex flex-col items-center justify-center gap-6 text-center mb-[4em] ">
-        <div className="  text-2xl  md:text-5xl text-nowrap bg-clip-text text-white ">
+        <div className="  text-xl  md:text-5xl text-nowrap bg-clip-text text-white px-[5em] ">
           {/* <h1 className="font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-800 to-black mb-4">
             pmcode
           </h1> */}

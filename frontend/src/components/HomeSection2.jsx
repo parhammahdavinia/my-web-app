@@ -7,12 +7,14 @@ import {
   SiPython,
   SiFigma,
   SiDjango,
+  SiDocker,
+  SiGit,
 } from "react-icons/si";
-
+import { Link } from "react-router-dom";
 const HomeSection2 = () => {
   return (
     <section className=" relative flex flex-col justify-center items-center bg-gradient-to-t from-blue-500 to-black text-white py-16 md:h-screen  300  ">
-      <h1 className="text-4xl md:text-6xl absolute top-0  font-extrabold text-center mb-12 tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to bg-white">
+      <h1 className="text-4xl md:text-6xl absolute top-0 z-10  font-extrabold text-center mb-12 tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to bg-white">
         skills
       </h1>
       <img
@@ -45,24 +47,25 @@ const HomeSection2 = () => {
               <SiPython className="text-blue-300 text-4xl mr-4" />
               <SiDjango className="text-blue-300 text-4xl mr-4" />
             </div>
-
-            <div></div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl hover:border-black shadow-lg transform hover:scale-105 transition-transform duration-300 flex items-center justify-center border-[.1em] h-[13em] border-white ">
-            <h3 className="text-xl font-semibold">degsin</h3>
+          <div className="bg-white/10 backdrop-blur-md p-6 flex-col rounded-xl hover:border-black shadow-lg transform hover:scale-105 transition-transform duration-300 flex items-center justify-center border-[.1em] h-[13em] border-white ">
+            <h3 className="text-xl font-semibold">Tools</h3>
             <div className="flex flex-row">
               {" "}
-              <SiFigma className="text-blue-300 text-4xl mr-4" />
+              <SiDocker className="text-blue-500 text-4xl mr-4" />
+              <SiGit className="text-orange-500 text-4xl mr-4" />
             </div>
           </div>
         </div>
 
         {/* Button */}
         <div className="text-center absolute -inset-x-0.5 z-10 md:mt-[4em] ">
-          <button className="border-2 text-white hover:text-black  font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1">
-            See more
-          </button>
+          <Link to="/Skills">
+            <button className="border-2 text-white hover:text-black  font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1">
+              See more
+            </button>
+          </Link>
         </div>
       </div>
     </section>
