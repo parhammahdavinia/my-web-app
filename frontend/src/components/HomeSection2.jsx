@@ -11,14 +11,17 @@ import {
 
 const HomeSection2 = () => {
   return (
-    <section className=" flex justify-center items-center bg-gradient-to-t from-blue-500 to-black text-white py-16 md:h-screen  300  ">
+    <section className=" relative flex flex-col justify-center items-center bg-gradient-to-t from-blue-500 to-black text-white py-16 md:h-screen  300  ">
+      <h1 className="text-4xl md:text-6xl absolute top-0  font-extrabold text-center mb-12 tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to bg-white">
+        skills
+      </h1>
+      <img
+        src="images/s2.png "
+        className="absolute inset-0 bg-contain   lg:shadow "
+      />
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl  font-extrabold text-center mb-12 tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to bg-white">
-          skills
-        </h2>
-
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6x  mx-auto py-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-6x  mx-auto py-5">
           {/* Skill Cards */}
           <div className="bg-white/10 flex-col  backdrop-blur-md p-6 hover:border-black   rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 flex items-center justify-center border-[.1em] border-white h-[13em]  ">
             <h3 className="text-xl font-semibold">frontend</h3>
