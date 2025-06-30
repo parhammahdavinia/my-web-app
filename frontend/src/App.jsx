@@ -1,23 +1,23 @@
-// src/App.jsx
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
-import { LanguageProvider } from "./contexts/LanguageContext";
+import Tools from "./Pages/Tools";
+import ToolsBase64 from "./Pages/ToolsBase64";
+import ToolsHashGenerator from "./Pages/ToolsHashGenerator";
+import ToolsPasswordGenerator from "./Pages/ToolsPasswordGenerator";
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Header from "./components/Header";
+import PageTransition from "./components/PageTransition";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Blog from "./Pages/Blog";
 import BlogDetail from "./Pages/BlogDetail";
 import Skills from "./Pages/Skills";
-import ScrollToTop from "./components/ScrollToTop";
-import LoadingSpinner from "./components/LoadingSpinner";
-import { Suspense, useState, useEffect } from "react";
-import PageTransition from "./components/PageTransition";
 import Services from "./Pages/Services";
+import LoadingSpinner from "./components/LoadingSpinner";
+import Header from "./components/Header";
+import ScrollToTop from "./components/ScrollToTop";
+import { Suspense } from "react";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -88,23 +88,53 @@ const AppRoutes = () => {
             </PageTransition>
           }
         />
+        <Route
+          path="/tools"
+          element={
+            <PageTransition>
+              <Tools />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/tools/base64"
+          element={
+            <PageTransition>
+              <ToolsBase64 />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/tools/hash-generator"
+          element={
+            <PageTransition>
+              <ToolsHashGenerator />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/tools/password-generator"
+          element={
+            <PageTransition>
+              <ToolsPasswordGenerator />
+            </PageTransition>
+          }
+        />
       </Routes>
     </AnimatePresence>
   );
 };
 
-const App = () => {
-  return (
-    <LanguageProvider>
-      <Router>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Header />
-          <AppRoutes />
-          <ScrollToTop />
-        </Suspense>
-      </Router>
-    </LanguageProvider>
-  );
-};
+const App = () => (
+  <LanguageProvider>
+    <Router>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Header />
+        <AppRoutes />
+        <ScrollToTop />
+      </Suspense>
+    </Router>
+  </LanguageProvider>
+);
 
 export default App;

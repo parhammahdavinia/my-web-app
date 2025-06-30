@@ -132,9 +132,9 @@ const Services = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-b from-blue-500 to-black py-16 px-4 text-white">
+      <div className="  flex flex-col justify-center  items-center min-h-screen bg-gradient-to-b from-blue-500 to-black py-16 px-4 text-white">
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+          <h1 className="text-4xl md:text-6xl font-extrabold  mt-[1em] mb-4">
             {content.title}
           </h1>
           <p className="text-lg md:text-xl text-gray-200">{content.subtitle}</p>

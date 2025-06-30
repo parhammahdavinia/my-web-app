@@ -100,15 +100,15 @@ export const en = {
     info: {
       email: {
         title: "Email",
-        value: "info@pmcode.com",
+        value: "parhammahdavinia@gmail.com",
       },
       phone: {
         title: "Phone",
-        value: "+98 912 123 4567",
+        value: "+98 939 220 6332",
       },
       address: {
         title: "Address",
-        value: "Tehran, Valiasr St.",
+        value: "Tehran.",
       },
       workingHours: {
         title: "Working Hours",

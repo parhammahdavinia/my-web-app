@@ -69,13 +69,13 @@ const ContactSection = () => {
       icon: <HiMail className="text-3xl text-blue-400" />,
       titleKey: "contact.info.email.title",
       infoKey: "contact.info.email.value",
-      link: "mailto:info@pmcode.com",
+      link: "mailto:parhammahdavinia@gmail.com",
     },
     {
       icon: <HiPhone className="text-3xl text-green-400" />,
       titleKey: "contact.info.phone.title",
       infoKey: "contact.info.phone.value",
-      link: "tel:+989121234567",
+      link: "tel:+989392206332",
     },
     {
       icon: <HiLocationMarker className="text-3xl text-red-400" />,

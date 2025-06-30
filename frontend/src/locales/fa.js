@@ -99,15 +99,15 @@ export const fa = {
     info: {
       email: {
         title: "ایمیل",
-        value: "info@pmcode.com",
+        value: "parhammahdavinia@gmail.com",
       },
       phone: {
         title: "تلفن",
-        value: "+98 912 123 4567",
+        value: "+98 939 220 6332",
       },
       address: {
         title: "آدرس",
-        value: "تهران، خیابان ولیعصر",
+        value: "تهران ",
       },
       workingHours: {
         title: "ساعات کاری",
@@ -345,15 +345,15 @@ export const fa = {
     info: {
       email: {
         title: "ایمیل",
-        value: "info@pmcode.com",
+        value: "parhammahdavinia@gmail.com",
       },
       phone: {
         title: "تلفن",
-        value: "+98 912 123 4567",
+        value: "+98 939 220 6332",
       },
       address: {
         title: "آدرس",
-        value: "تهران، خیابان ولیعصر",
+        value: "تهران ",
       },
       workingHours: {
         title: "ساعات کاری",

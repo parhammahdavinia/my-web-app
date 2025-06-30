@@ -53,6 +53,7 @@ const Header = () => {
     { to: "/blog", text: t("blog") },
     { to: "/skills", text: t("skills") },
     { to: "/services", text: t("language") === "fa" ? "سرویس‌ها" : "Service" },
+    { to: "/tools", text: t("language") === "fa" ? "ابزارها" : "Tools" },
   ];
 
   return (
@@ -60,15 +61,16 @@ const Header = () => {
       <header className="vazir  backdrop-blur-md  py-4 fixed inset-0 h-[4em] top-5  shadow-cyan-300 shadow-lg z-50 mx-auto opacity-90  rounded-3xl w-[80%]   bg-gradient-to-r from-blue-500 to-black ">
         <div className="container mx-auto flex justify-between items-center px-6">
           {/* Logo */}
-          <div
+          <Link
+            to="/"
             data-aos="zoom-in"
-            className="text-lg font-bold flex flex-row gap-1"
+            className="text-lg font-bold flex flex-row gap-1 hover:opacity-80 transition-opacity"
           >
             <div className="bg-white px-1 py-0.5  text-blue-700 rounded-sm">
               PM
             </div>
             <div className="text-white ">code</div>
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex justify-center items-center gap-6 space-x-6  text-gray-100">

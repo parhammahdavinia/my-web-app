@@ -66,15 +66,10 @@ const About = () => {
   const content = language === "fa" ? fa : en;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-500 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-t from-blue-500 to-black text-white py-16  ">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <img
-          src="/images/4.png"
-          className="absolute bottom-0 bg-contain z-0 lg:shadow opacity-20"
-          alt="Background decoration"
-        />
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 mt-[2em]">
           <div className="text-center max-w-3xl mx-auto">
             <div className="flex justify-center mb-6">
               <HiUser className="text-6xl text-blue-300" />
@@ -97,9 +92,9 @@ const About = () => {
       </section>
 
       {/* درباره پروژه / About Project */}
-      <section className="py-16 bg-white/5">
+      <section className="py-16    ">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl font-bold mb-6 text-blue-300">
+          <h2 className="text-3xl font-bold  text-blue-300">
             {content.aboutProjectTitle}
           </h2>
           <p className="text-lg text-gray-300 leading-relaxed mb-4">
@@ -112,7 +107,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+      <section className="py-16   ">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">{content.contactTitle}</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
