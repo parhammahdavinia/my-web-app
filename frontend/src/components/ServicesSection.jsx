@@ -1,4 +1,5 @@
 import React from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 import {
   SiWebpack,
   SiReact,
@@ -12,20 +13,20 @@ import {
 } from "react-icons/si";
 
 const ServicesSection = () => {
+  const { t } = useLanguage();
+
   const services = [
     {
       id: 1,
-      title: "طراحی وب سایت",
-      description:
-        "طراحی و توسعه وب‌سایت‌های مدرن و ریسپانسیو با استفاده از آخرین تکنولوژی‌ها",
+      titleKey: "services.items.webDesign.title",
+      descriptionKey: "services.items.webDesign.description",
       icon: <SiWebpack className="text-4xl text-blue-400" />,
       features: ["React.js", "Vue.js", "Tailwind CSS", "Responsive Design"],
     },
     {
       id: 2,
-      title: "اپلیکیشن موبایل",
-      description:
-        "توسعه اپلیکیشن‌های موبایل برای iOS و Android با عملکرد بالا",
+      titleKey: "services.items.mobileApp.title",
+      descriptionKey: "services.items.mobileApp.description",
       icon: (
         <div className="flex gap-2">
           <SiAndroid className="text-4xl text-green-400" />
@@ -41,8 +42,8 @@ const ServicesSection = () => {
     },
     {
       id: 3,
-      title: "توسعه Backend",
-      description: "طراحی و پیاده‌سازی API های قدرتمند و پایگاه داده‌های بهینه",
+      titleKey: "services.items.backend.title",
+      descriptionKey: "services.items.backend.description",
       icon: (
         <div className="flex gap-2">
           <SiMongodb className="text-4xl text-green-400" />
@@ -53,8 +54,8 @@ const ServicesSection = () => {
     },
     {
       id: 4,
-      title: "DevOps & Cloud",
-      description: "استقرار و مدیریت اپلیکیشن‌ها در محیط‌های ابری و CI/CD",
+      titleKey: "services.items.devops.title",
+      descriptionKey: "services.items.devops.description",
       icon: <SiCloudflare className="text-4xl text-orange-400" />,
       features: ["Docker", "AWS", "CI/CD", "Monitoring"],
     },
@@ -71,11 +72,10 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-white">
-            خدمات ما
+            {t("services.title")}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            ما مجموعه‌ای کامل از خدمات توسعه نرم‌افزار را ارائه می‌دهیم تا
-            کسب‌وکار شما را به سطح بالاتری برسانیم
+            {t("services.subtitle")}
           </p>
         </div>
 
@@ -83,20 +83,21 @@ const ServicesSection = () => {
           {services.map((service) => (
             <div
               key={service.id}
+              data-aos="flip-up"
               className="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/20 hover:border-blue-400 transition-all duration-300 transform hover:scale-105"
             >
               <div className="flex items-center mb-6">
                 <div className="mr-4">{service.icon}</div>
-                <h3 className="text-2xl font-bold">{service.title}</h3>
+                <h3 className="text-2xl font-bold">{t(service.titleKey)}</h3>
               </div>
 
               <p className="text-gray-300 mb-6 leading-relaxed">
-                {service.description}
+                {t(service.descriptionKey)}
               </p>
 
               <div className="space-y-2">
                 <h4 className="font-semibold text-blue-300 mb-3">
-                  تکنولوژی‌های استفاده شده:
+                  {t("services.technologies")}
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {service.features.map((feature, index) => (
@@ -114,8 +115,11 @@ const ServicesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="border-2 text-white hover:text-black font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1">
-            درخواست مشاوره رایگان
+          <button
+            data-aos="zoom-in"
+            className="border-2 text-white hover:text-black font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1"
+          >
+            {t("services.freeConsultation")}
           </button>
         </div>
       </div>

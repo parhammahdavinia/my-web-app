@@ -1,28 +1,30 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Virtual, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
-
 import "swiper/css/pagination";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const HomeSection3 = () => {
+  const { t } = useLanguage();
+
   // داده‌های پروژه‌ها
   const projects = [
     {
       id: 1,
-      title: "پروژه E-Commerce",
-      description: "Modern UI",
+      titleKey: "home.section3.projects.ecommerce.title",
+      descriptionKey: "home.section3.projects.ecommerce.description",
       image: "/images/ec.png",
     },
     {
       id: 2,
-      title: "crypto Agency",
-      description: "trade",
+      titleKey: "home.section3.projects.crypto.title",
+      descriptionKey: "home.section3.projects.crypto.description",
       image: "/images/sar.png",
     },
     {
       id: 3,
-      title: " shop",
-      description: "jewely  ",
+      titleKey: "home.section3.projects.shop.title",
+      descriptionKey: "home.section3.projects.shop.description",
       image: "/images/je.png",
     },
   ];
@@ -30,7 +32,7 @@ const HomeSection3 = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-blue-500 to-black text-white text-center h-screen overflow-hidden relative">
       <h2 className="text-4xl md:text-6xl absolute top-3 text-shadow-2xs inset-0 z-10 font-extrabold tracking-wide">
-        Latest projects
+        {t("home.section3.title")}
       </h2>
       <img
         src="/images/4.png"
@@ -55,16 +57,18 @@ const HomeSection3 = () => {
                 <div className="w-full h-[80%] mb-4">
                   <img
                     src={project.image || "https://via.placeholder.com/400x200"}
-                    alt={project.title}
+                    alt={t(project.titleKey)}
                     className="w-full h-full object-fill rounded-lg"
                   />
                 </div>
                 {/* Text Content */}
                 <div className="text-center">
                   <h3 className="text-2xl font-semibold mb-2">
-                    {project.title}
+                    {t(project.titleKey)}
                   </h3>
-                  <p className="text-gray-300 text-sm">{project.description}</p>
+                  <p className="text-gray-300 text-sm">
+                    {t(project.descriptionKey)}
+                  </p>
                 </div>
               </div>
             </SwiperSlide>
@@ -74,7 +78,7 @@ const HomeSection3 = () => {
         {/* Button */}
         <div className="absolute -inset-x-0.5 z-10 mt-[30em]">
           <button className="border-2 text-white hover:text-black font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1">
-            See more
+            {t("home.section3.seeMore")}
           </button>
         </div>
       </div>

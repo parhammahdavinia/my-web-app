@@ -1,34 +1,33 @@
 import React from "react";
+import { useLanguage } from "../contexts/LanguageContext";
+import Button from "./common/Button";
 
 const HomeSection1 = () => {
-  return (
-    <section className="relative  flex flex-col items-center justify-center h-screen  overflow-hidden bg-gradient-to-b from-blue-500 to-black  ">
-      <img
-        src="images/4.png "
-        className="absolute bottom-0 bg-contain z-20  lg:shadow "
-      />
-      {/* <img
-        src="images/1.png "
-        className="absolute inset-0 bg-contain z-20   md:hidden"
-      /> */}
+  const { t } = useLanguage();
 
-      <div className="relative z-30  flex flex-col items-center justify-center gap-6 text-center mb-[4em] ">
-        <div className="  text-xl  md:text-5xl text-nowrap bg-clip-text text-white px-[5em] ">
-          {/* <h1 className="font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-800 to-black mb-4">
-            pmcode
-          </h1> */}
-          <p className=" font-medium  ">
-            Create and personalize your digital business
+  return (
+    <section className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-gradient-to-b from-blue-500 to-black">
+      <img
+        src="images/4.png"
+        className="absolute bottom-0 bg-contain z-20 lg:shadow"
+      />
+
+      <div className="relative z-30 flex flex-col items-center justify-center gap-6 text-center mb-[4em]">
+        <div className="text-xl md:text-5xl text-nowrap bg-clip-text text-white px-[5em]">
+          <p className="font-medium" data-aos="fade-right" data-aos-delay="100">
+            {t("home.section1.create")}
           </p>
-          <p className=" font-light  ">
-            Your company in the simplest way possible
+          <p className="font-light" data-aos="fade-left" data-aos-delay="200">
+            {t("home.section1.simplest")}
           </p>
-          <p className=" font-light  ">Build your company</p>
+          <p className="font-light" data-aos="fade-right" data-aos-delay="300">
+            {t("home.section1.build")}
+          </p>
         </div>
 
-        <button className=" border-2 text-white hover:text-black  font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1">
-          contact us
-        </button>
+        <Button variant="secondary" data-aos="fade-up" data-aos-delay="400">
+          {t("common.contactUs")}
+        </Button>
       </div>
     </section>
   );
