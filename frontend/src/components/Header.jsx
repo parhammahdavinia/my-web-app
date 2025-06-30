@@ -52,6 +52,7 @@ const Header = () => {
     { to: "/about", text: t("about") },
     { to: "/blog", text: t("blog") },
     { to: "/skills", text: t("skills") },
+    { to: "/services", text: t("language") === "fa" ? "سرویس‌ها" : "Service" },
   ];
 
   return (

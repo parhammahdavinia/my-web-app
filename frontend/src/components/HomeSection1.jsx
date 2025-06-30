@@ -1,9 +1,9 @@
 import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import Button from "./common/Button";
-
+import { Link } from "react-router-dom";
 const HomeSection1 = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-gradient-to-b from-blue-500 to-black">
@@ -24,10 +24,11 @@ const HomeSection1 = () => {
             {t("home.section1.build")}
           </p>
         </div>
-
-        <Button variant="secondary" data-aos="fade-up" data-aos-delay="400">
-          {t("common.contactUs")}
-        </Button>
+        <Link to="/about">
+          <Button variant="secondary" data-aos="fade-up" data-aos-delay="400">
+            {language === "fa" ? t("about") : t("about.title")}
+          </Button>
+        </Link>
       </div>
     </section>
   );

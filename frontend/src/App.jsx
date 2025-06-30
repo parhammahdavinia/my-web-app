@@ -17,6 +17,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import LoadingSpinner from "./components/LoadingSpinner";
 import { Suspense, useState, useEffect } from "react";
 import PageTransition from "./components/PageTransition";
+import Services from "./Pages/Services";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -76,6 +77,14 @@ const AppRoutes = () => {
           element={
             <PageTransition>
               <Skills />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/services"
+          element={
+            <PageTransition>
+              <Services />
             </PageTransition>
           }
         />

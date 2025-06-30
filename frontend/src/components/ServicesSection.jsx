@@ -1,5 +1,6 @@
 import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { Link } from "react-router-dom";
 import {
   SiWebpack,
   SiReact,
@@ -115,12 +116,17 @@ const ServicesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button
-            data-aos="zoom-in"
-            className="border-2 text-white hover:text-black font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1"
-          >
-            {t("services.freeConsultation")}
-          </button>
+          <Link to="/services">
+            <button
+              data-aos="zoom-in"
+              className="border-2 text-white hover:text-black font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1"
+            >
+              {t("services.freeConsultation")} /{" "}
+              {t("language") === "fa"
+                ? "مشاهده همه سرویس‌ها"
+                : "View All Services"}
+            </button>
+          </Link>
         </div>
       </div>
     </section>

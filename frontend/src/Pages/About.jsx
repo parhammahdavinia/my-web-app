@@ -1,45 +1,69 @@
 import React from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 import {
-  HiUsers,
-  HiLightBulb,
-  HiHeart,
-  HiStar,
+  HiAcademicCap,
   HiCode,
-  HiGlobe,
-  HiTrendingUp,
-  HiShieldCheck,
+  HiDeviceMobile,
+  HiMail,
+  HiUser,
 } from "react-icons/hi";
 
 const About = () => {
-  const values = [
-    {
-      icon: <HiLightBulb className="text-4xl text-yellow-400" />,
-      title: "نوآوری",
-      description: "همیشه در جستجوی راه‌حل‌های خلاقانه و پیشرفته هستیم",
-    },
-    {
-      icon: <HiHeart className="text-4xl text-red-400" />,
-      title: "اشتیاق",
-      description: "عشق به کدنویسی و خلق محصولات با کیفیت",
-    },
-    {
-      icon: <HiStar className="text-4xl text-blue-400" />,
-      title: "کیفیت",
-      description: "تعهد به ارائه بهترین کیفیت در تمام پروژه‌ها",
-    },
-    {
-      icon: <HiUsers className="text-4xl text-green-400" />,
-      title: "همکاری",
-      description: "کار تیمی و ارتباط نزدیک با مشتریان",
-    },
-  ];
+  const { language } = useLanguage();
 
-  const stats = [
-    { number: "50+", label: "پروژه موفق", icon: <HiCode /> },
-    { number: "30+", label: "مشتری راضی", icon: <HiHeart /> },
-    { number: "5+", label: "سال تجربه", icon: <HiTrendingUp /> },
-    { number: "24/7", label: "پشتیبانی", icon: <HiShieldCheck /> },
-  ];
+  // اطلاعات فارسی
+  const fa = {
+    name: "پرهام مهدوی نیا",
+    title:
+      "دانشجوی رشته کامپیوتر و توسعه‌دهنده وب، علاقه‌مند به یادگیری و خلق پروژه‌های مدرن و حرفه‌ای.",
+    details: [
+      { icon: <HiAcademicCap />, text: "دانشجوی کامپیوتر" },
+      { icon: <HiCode />, text: "توسعه‌دهنده React و Django" },
+      {
+        icon: <HiDeviceMobile />,
+        text: "علاقه‌مند به طراحی ریسپانسیو و تجربه کاربری",
+      },
+      { icon: <HiMail />, text: "parhammahdavinia@gmail.com" },
+    ],
+    aboutProjectTitle: "درباره این پروژه",
+    aboutProjectDesc1:
+      "این وب‌سایت با هدف نمایش نمونه‌کارها و ارائه خدمات طراحی سایت، فروشگاه اینترنتی، گالری و سایر سرویس‌های مرتبط با توسعه وب ساخته شده است. تمامی بخش‌ها با استفاده از تکنولوژی‌های روز و با تمرکز بر تجربه کاربری و زیبایی پیاده‌سازی شده‌اند.",
+    aboutProjectDesc2:
+      "اگر به دنبال راه‌اندازی سایت حرفه‌ای یا توسعه کسب‌وکار آنلاین خود هستید، خوشحال می‌شوم با شما همکاری کنم!",
+    contactTitle: "ارتباط با من",
+    contactDesc:
+      "برای مشاوره، سفارش پروژه یا همکاری، از طریق ایمیل یا فرم تماس سایت پیام دهید.",
+    contactBtn: "ارسال ایمیل",
+    email: "parhammahdavinia@gmail.com",
+  };
+
+  // اطلاعات انگلیسی
+  const en = {
+    name: "Parham Mahdavinia",
+    title:
+      "Computer engineering student and web developer, passionate about learning and building modern, professional projects.",
+    details: [
+      { icon: <HiAcademicCap />, text: "Computer Science Student" },
+      { icon: <HiCode />, text: "React & Django Developer" },
+      {
+        icon: <HiDeviceMobile />,
+        text: "Interested in Responsive Design & UX",
+      },
+      { icon: <HiMail />, text: "parhammahdavinia@gmail.com" },
+    ],
+    aboutProjectTitle: "About This Project",
+    aboutProjectDesc1:
+      "This website is built to showcase my portfolio and offer web design, e-commerce, gallery, and other web development services. All sections are implemented using modern technologies with a focus on user experience and aesthetics.",
+    aboutProjectDesc2:
+      "If you are looking to launch a professional website or grow your online business, I would be happy to collaborate!",
+    contactTitle: "Contact Me",
+    contactDesc:
+      "For consulting, project requests, or collaboration, feel free to email me or use the contact form on the site.",
+    contactBtn: "Send Email",
+    email: "parhammahdavinia@gmail.com",
+  };
+
+  const content = language === "fa" ? fa : en;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-500 to-black text-white">
@@ -50,120 +74,56 @@ const About = () => {
           className="absolute bottom-0 bg-contain z-0 lg:shadow opacity-20"
           alt="Background decoration"
         />
-
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-white">
-              درباره ما
+          <div className="text-center max-w-3xl mx-auto">
+            <div className="flex justify-center mb-6">
+              <HiUser className="text-6xl text-blue-300" />
+            </div>
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-4 tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-white">
+              {content.name}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              ما تیمی از متخصصان جوان و با انگیزه هستیم که با اشتیاق و خلاقیت،
-              رویاهای دیجیتال شما را به واقعیت تبدیل می‌کنیم
+            <p className="text-xl md:text-2xl text-gray-200 mb-6 leading-relaxed">
+              {content.title}
             </p>
-            <div className="flex items-center justify-center gap-4 text-blue-300">
-              <HiGlobe className="text-3xl" />
-              <span className="text-lg">از سال 2019 در خدمت شما</span>
+            <div className="flex flex-col items-center gap-2 text-blue-200 mb-4">
+              {content.details.map((item, i) => (
+                <span key={i} className="flex items-center gap-2">
+                  {item.icon} {item.text}
+                </span>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* درباره پروژه / About Project */}
       <section className="py-16 bg-white/5">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6 text-blue-300">
-                ماموریت ما
-              </h2>
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                ما متعهد به ارائه راه‌حل‌های دیجیتال با کیفیت بالا هستیم که به
-                کسب‌وکارها کمک می‌کند تا در دنیای دیجیتال موفق باشند. هدف ما خلق
-                تجربه‌های کاربری استثنایی و محصولاتی است که واقعاً تفاوت ایجاد
-                می‌کنند.
-              </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                با ترکیبی از تکنولوژی‌های مدرن و خلاقیت، ما پروژه‌هایی را خلق
-                می‌کنیم که نه تنها زیبا هستند، بلکه عملکردی و کاربردی نیز
-                می‌باشند.
-              </p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20">
-              <h3 className="text-2xl font-bold mb-4 text-blue-300">
-                چشم‌انداز ما
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                تبدیل شدن به یکی از پیشگامان صنعت توسعه نرم‌افزار در ایران و
-                ارائه خدمات با کیفیت جهانی به مشتریان داخلی و بین‌المللی.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">ارزش‌های ما</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              این اصول راهنمای ما در تمام پروژه‌ها و تعاملات ما هستند
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20 hover:border-blue-400/50 transition-all duration-300 transform hover:scale-105 text-center"
-              >
-                <div className="flex justify-center mb-4">{value.icon}</div>
-                <h3 className="text-xl font-bold mb-3 text-blue-300">
-                  {value.title}
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="py-16 bg-white/5">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20"
-              >
-                <div className="flex justify-center mb-3 text-blue-400">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-300">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold mb-6 text-blue-300">
+            {content.aboutProjectTitle}
+          </h2>
+          <p className="text-lg text-gray-300 leading-relaxed mb-4">
+            {content.aboutProjectDesc1}
+          </p>
+          <p className="text-lg text-gray-300 leading-relaxed">
+            {content.aboutProjectDesc2}
+          </p>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            آماده شروع پروژه شما هستیم
-          </h2>
+          <h2 className="text-4xl font-bold mb-6">{content.contactTitle}</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            بیایید با هم رویای دیجیتال شما را به واقعیت تبدیل کنیم
+            {content.contactDesc}
           </p>
-          <button className="border-2 text-white hover:text-black font-semibold py-4 px-8 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1 text-lg">
-            شروع پروژه
-          </button>
+          <a
+            href={`mailto:${content.email}`}
+            className="border-2 text-white hover:text-black font-semibold py-4 px-8 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1 text-lg inline-block"
+          >
+            {content.contactBtn}
+          </a>
         </div>
       </section>
     </div>
