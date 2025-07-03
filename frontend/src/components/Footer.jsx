@@ -19,10 +19,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/portfolio"
+                  to="/services"
                   className="hover:text-gray-200 transition-colors"
                 >
-                  our Work
+                  services
                 </Link>
               </li>
               <li>
@@ -35,10 +35,26 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/tools"
+                  className="hover:text-gray-200 transition-colors"
+                >
+                  tools
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/skills"
                   className="hover:text-gray-200 transition-colors"
                 >
                   Skills
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  className="hover:text-gray-200 transition-colors"
+                >
+                  about
                 </Link>
               </li>
             </ul>
@@ -53,7 +69,7 @@ const Footer = () => {
               <li className="flex items-center gap-3 hover:text-gray-200 transition-colors">
                 <FaEnvelope className="text-xl" />
                 <a href="mailto:info@flexdev.com" className="transition-colors">
-                  info@flexdev.com
+                  parhammahdavinia@gmail.com
                 </a>
               </li>
               <li className="flex items-center justify-center gap-3 hover:text-gray-200 transition-colors">

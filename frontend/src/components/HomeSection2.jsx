@@ -33,8 +33,8 @@ const HomeSection2 = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-6x mx-auto py-5">
           {/* Skill Cards */}
           <div
-            data-aos="fade-right"
-            className="bg-white/10 flex-col backdrop-blur-md p-6 hover:border-black rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 flex items-center justify-center border-[.1em] border-white h-[13em]"
+            data-aos="fade-up"
+            className="bg-white/10 flex-col backdrop-blur-md p-6 hover:border-cyan-400 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 flex items-center justify-center border-[.1em] border-white h-[13em]"
           >
             <h3 className="text-xl font-semibold">{t("skills.frontend")}</h3>
             <div className="flex flex-row">
@@ -51,7 +51,7 @@ const HomeSection2 = () => {
 
           <div
             data-aos="fade-down"
-            className="bg-white/10 flex-col backdrop-blur-md p-6 rounded-xl shadow-lg hover:border-black transform hover:scale-105 transition-transform duration-300 flex items-center justify-center h-[13em] border-[.1em] border-white"
+            className="bg-white/10 flex-col backdrop-blur-md p-6 rounded-xl shadow-lg hover:border-cyan-400 transform hover:scale-105 transition-transform duration-300 flex items-center justify-center h-[13em] border-[.1em] border-white"
           >
             <h3 className="text-xl font-semibold">{t("skills.backend")}</h3>
             <div className="flex flex-row">
@@ -61,8 +61,8 @@ const HomeSection2 = () => {
           </div>
 
           <div
-            data-aos="fade-left"
-            className="bg-white/10 backdrop-blur-md p-6 flex-col rounded-xl hover:border-black shadow-lg transform hover:scale-105 transition-transform duration-300 flex items-center justify-center border-[.1em] h-[13em] border-white"
+            data-aos="fade-up"
+            className="bg-white/10 backdrop-blur-md p-6 flex-col rounded-xl hover:border-cyan-400 shadow-lg transform hover:scale-105 transition-transform duration-300 flex items-center justify-center border-[.1em] h-[13em] border-white"
           >
             <h3 className="text-xl font-semibold">{t("skills.tools")}</h3>
             <div className="flex flex-row">
