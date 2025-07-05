@@ -65,7 +65,7 @@ const LanguageSwitcher = () => {
   return (
     <motion.button
       onClick={handleLanguageChange}
-      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 text-white hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-blue-400/50"
+      className="flex items-center gap-2 px-3 py-2 rounded-lg  text-white hover:bg-white/20 transition-all duration-300  hover:border-blue-400/50"
       title={t("language")}
       variants={buttonVariants}
       whileHover="hover"

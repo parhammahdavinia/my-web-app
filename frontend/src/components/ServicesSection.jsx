@@ -24,23 +24,7 @@ const ServicesSection = () => {
       icon: <SiWebpack className="text-4xl text-blue-400" />,
       features: ["React.js", "Vue.js", "Tailwind CSS", "Responsive Design"],
     },
-    {
-      id: 2,
-      titleKey: "services.items.mobileApp.title",
-      descriptionKey: "services.items.mobileApp.description",
-      icon: (
-        <div className="flex gap-2">
-          <SiAndroid className="text-4xl text-green-400" />
-          <SiIos className="text-4xl text-blue-400" />
-        </div>
-      ),
-      features: [
-        "React Native",
-        "Flutter",
-        "Native Development",
-        "Cross-platform",
-      ],
-    },
+
     {
       id: 3,
       titleKey: "services.items.backend.title",
@@ -80,7 +64,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto ">
           {services.map((service) => (
             <div
               key={service.id}
