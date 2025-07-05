@@ -4,6 +4,7 @@ export const en = {
   about: "About",
   blog: "Blog",
   skills: "Skills",
+  projects: "Projects",
   contact: "Contact",
 
   // Home Page
@@ -304,4 +305,36 @@ export const en = {
   feedback: "Feedback",
   report: "Report",
   version: "Version",
+
+  // Projects Page
+  projects: {
+    title: "Our Projects",
+    subtitle:
+      "Our portfolio showcasing the skills and creativity of our team in software development",
+    categories: {
+      all: "All",
+      web: "Web",
+      mobile: "Mobile",
+    },
+    featured: "Featured",
+    viewLive: "View Live",
+    viewCode: "Code",
+    noProjectsFound: "No projects found",
+    noProjectsInCategory: "No projects available in this category",
+    readyToStart: "Ready to Start Your Project",
+    readyToStartSubtitle:
+      "Let's transform your digital dreams into reality together",
+    startProject: "Start Project",
+  },
+
+  // Tools
+  tools: {
+    title: "Tools",
+    allTools: "All Tools",
+    codeFormatter: "Code Formatter",
+    qrGenerator: "QR Code Generator",
+    passwordGenerator: "Password Generator",
+    hashGenerator: "Hash Generator",
+    base64Encoder: "Base64 Encoder",
+  },
 };

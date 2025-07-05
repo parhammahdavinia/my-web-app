@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { HiHome, HiMenu, HiX } from "react-icons/hi";
+import { HiHome, HiMenu, HiX, HiChevronDown } from "react-icons/hi";
 import { useLanguage } from "../contexts/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,7 +10,8 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const { t } = useLanguage();
+  const [isToolsDropdownOpen, setIsToolsDropdownOpen] = useState(false);
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,13 +72,65 @@ const Header = () => {
     }),
   };
 
+  const dropdownVariants = {
+    closed: {
+      opacity: 0,
+      y: -10,
+      scale: 0.95,
+      transition: {
+        duration: 0.2,
+      },
+    },
+    open: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.2,
+      },
+    },
+  };
+
+  const toolsItems = [
+    {
+      to: "/tools",
+      text: t("tools.allTools"),
+      icon: "🔧",
+    },
+    {
+      to: "/tools/code-formatter",
+      text: t("tools.codeFormatter"),
+      icon: "⚡",
+    },
+    {
+      to: "/tools/qr-generator",
+      text: t("tools.qrGenerator"),
+      icon: "📱",
+    },
+    {
+      to: "/tools/password-generator",
+      text: t("tools.passwordGenerator"),
+      icon: "🔐",
+    },
+    {
+      to: "/tools/hash-generator",
+      text: t("tools.hashGenerator"),
+      icon: "🔑",
+    },
+    {
+      to: "/tools/base64",
+      text: t("tools.base64Encoder"),
+      icon: "📝",
+    },
+  ];
+
   const menuItems = [
     { to: "/", text: t("home") },
     { to: "/about", text: t("about") },
     { to: "/blog", text: t("blog") },
     { to: "/skills", text: t("skills") },
+    { to: "/projects", text: t("projects") },
     { to: "/services", text: t("language") === "fa" ? "سرویس‌ها" : "Service" },
-    { to: "/tools", text: t("language") === "fa" ? "ابزارها" : "Tools" },
   ];
 
   return (
@@ -112,6 +165,51 @@ const Header = () => {
                 {item.text}
               </Link>
             ))}
+
+            {/* Tools Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsToolsDropdownOpen(!isToolsDropdownOpen)}
+                onBlur={() =>
+                  setTimeout(() => setIsToolsDropdownOpen(false), 200)
+                }
+                className="hover:text-gray-200 transition-colors flex items-center gap-1 group"
+              >
+                {t("tools.title")}
+                <HiChevronDown
+                  size={16}
+                  className={`transition-transform duration-200 ${
+                    isToolsDropdownOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              <AnimatePresence>
+                {isToolsDropdownOpen && (
+                  <motion.div
+                    initial="closed"
+                    animate="open"
+                    exit="closed"
+                    variants={dropdownVariants}
+                    className="absolute top-full left-0 mt-2 w-64 bg-gray-800/95 backdrop-blur-sm rounded-xl border border-gray-700/50 shadow-2xl overflow-hidden"
+                  >
+                    <div className="py-2">
+                      {toolsItems.map((item, index) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          onClick={() => setIsToolsDropdownOpen(false)}
+                          className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-700/50 transition-all duration-200 group"
+                        >
+                          <span className="text-lg">{item.icon}</span>
+                          <span className="text-sm">{item.text}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </nav>
 
           {/* Language Switcher & Mobile Menu Button */}
@@ -161,10 +259,36 @@ const Header = () => {
                 </motion.div>
               ))}
 
-              {/* Language Switcher in Mobile Menu */}
+              {/* Tools Section in Mobile Menu */}
               <motion.div
                 variants={menuItemVariants}
                 custom={menuItems.length}
+                className="flex flex-col items-center space-y-4"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold mb-4">
+                    {t("tools.title")}
+                  </h3>
+                  <div className="flex flex-col space-y-3">
+                    {toolsItems.map((item, index) => (
+                      <Link
+                        key={item.to}
+                        to={item.to}
+                        className="flex items-center gap-3 hover:text-gray-300 transition-colors"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <span className="text-xl">{item.icon}</span>
+                        <span className="text-base">{item.text}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Language Switcher in Mobile Menu */}
+              <motion.div
+                variants={menuItemVariants}
+                custom={menuItems.length + 1}
                 className="mt-8"
               >
                 <LanguageSwitcher />

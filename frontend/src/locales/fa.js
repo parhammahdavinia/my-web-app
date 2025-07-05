@@ -4,6 +4,7 @@ export const fa = {
   about: "درباره ما",
   blog: "بلاگ",
   skills: "مهارت‌ها",
+  projects: "پروژه‌ها",
   contact: "تماس با ما",
 
   // Home Page
@@ -564,5 +565,37 @@ export const fa = {
   signal: "سیگنال",
   common: {
     contactUs: "تماس با ما",
+  },
+
+  // Projects Page
+  projects: {
+    title: "پروژه‌های ما",
+    subtitle:
+      "نمونه‌کارهای ما که نشان‌دهنده مهارت و خلاقیت تیم ما در توسعه نرم‌افزار است",
+    categories: {
+      all: "همه",
+      web: "وب",
+      mobile: "موبایل",
+    },
+    featured: "ویژه",
+    viewLive: "مشاهده",
+    viewCode: "کد",
+    noProjectsFound: "پروژه‌ای یافت نشد",
+    noProjectsInCategory: "در این دسته‌بندی پروژه‌ای موجود نیست",
+    readyToStart: "آماده شروع پروژه شما هستیم",
+    readyToStartSubtitle:
+      "بیایید با هم رویای دیجیتال شما را به واقعیت تبدیل کنیم",
+    startProject: "شروع پروژه",
+  },
+
+  // Tools
+  tools: {
+    title: "ابزارها",
+    allTools: "همه ابزارها",
+    codeFormatter: "فرمت‌کننده کد",
+    qrGenerator: "تولیدکننده QR کد",
+    passwordGenerator: "تولیدکننده رمز عبور",
+    hashGenerator: "تولیدکننده هش",
+    base64Encoder: "کدگذاری Base64",
   },
 };

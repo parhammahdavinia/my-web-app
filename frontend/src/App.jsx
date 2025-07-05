@@ -2,6 +2,8 @@ import Tools from "./Pages/Tools";
 import ToolsBase64 from "./Pages/ToolsBase64";
 import ToolsHashGenerator from "./Pages/ToolsHashGenerator";
 import ToolsPasswordGenerator from "./Pages/ToolsPasswordGenerator";
+import ToolsCodeFormatter from "./Pages/ToolsCodeFormatter";
+import ToolsQRGenerator from "./Pages/ToolsQRGenerator";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
@@ -12,6 +14,7 @@ import About from "./Pages/About";
 import Blog from "./Pages/Blog";
 import BlogDetail from "./Pages/BlogDetail";
 import Skills from "./Pages/Skills";
+import Projects from "./Pages/Projects";
 import Services from "./Pages/Services";
 import LoadingSpinner from "./components/LoadingSpinner";
 import Header from "./components/Header";
@@ -81,6 +84,14 @@ const AppRoutes = () => {
           }
         />
         <Route
+          path="/projects"
+          element={
+            <PageTransition>
+              <Projects />
+            </PageTransition>
+          }
+        />
+        <Route
           path="/services"
           element={
             <PageTransition>
@@ -117,6 +128,22 @@ const AppRoutes = () => {
           element={
             <PageTransition>
               <ToolsPasswordGenerator />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/tools/code-formatter"
+          element={
+            <PageTransition>
+              <ToolsCodeFormatter />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/tools/qr-generator"
+          element={
+            <PageTransition>
+              <ToolsQRGenerator />
             </PageTransition>
           }
         />
