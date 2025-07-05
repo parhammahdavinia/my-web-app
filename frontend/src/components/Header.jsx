@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { HiHome, HiMenu, HiX } from "react-icons/hi";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -7,7 +7,31 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const { t } = useLanguage();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const menuVariants = {
     closed: {
@@ -58,7 +82,12 @@ const Header = () => {
 
   return (
     <>
-      <header className="vazir  backdrop-blur-md  py-4 fixed inset-0 h-[4em] top-5  shadow-cyan-300 shadow-lg z-50 mx-auto opacity-90  rounded-3xl w-[80%]   bg-gradient-to-r from-blue-500 to-black ">
+      <header
+        className={`vazir fixed top-5 left-1/2 transform -translate-x-1/2 w-[90%] z-50 rounded-2xl backdrop-blur-lg bg-gradient-to-r from-blue-500 to-black border border-white/30 shadow-xl transition-all duration-300 ease-in-out
+        ${scrolled ? "py-2 h-[3em] shadow-lg" : "py-4 h-[4em] shadow-cyan-300"}
+        ${showHeader ? "translate-y-0" : "-translate-y-full"}
+      `}
+      >
         <div className="container mx-auto flex justify-between items-center px-6">
           {/* Logo */}
           <Link
@@ -66,14 +95,14 @@ const Header = () => {
             data-aos="zoom-in"
             className="text-lg font-bold flex flex-row gap-1 hover:opacity-80 transition-opacity"
           >
-            <div className="bg-white px-1 py-0.5  text-blue-700 rounded-sm">
+            <div className="bg-white px-1 py-0.5 text-blue-700 rounded-sm">
               PM
             </div>
-            <div className="text-white ">code</div>
+            <div className="text-white">code</div>
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex justify-center items-center gap-6 space-x-6  text-gray-100">
+          <nav className="hidden md:flex justify-center items-center gap-6 text-gray-100">
             {menuItems.map((item) => (
               <Link
                 key={item.to}
