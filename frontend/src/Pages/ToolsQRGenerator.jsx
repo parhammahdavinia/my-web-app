@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
 import { HiQrcode, HiDownload, HiRefresh, HiClipboard } from "react-icons/hi";
+import QRCode from "qrcode";
 
 const ToolsQRGenerator = () => {
   const { t, language } = useLanguage();
@@ -30,41 +31,23 @@ const ToolsQRGenerator = () => {
     setIsGenerating(true);
 
     try {
-      // Simulate API call for QR generation
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const options = {
+        errorCorrectionLevel: errorCorrection,
+        type: "image/png",
+        quality: 0.92,
+        margin: 1,
+        color: {
+          dark: qrColor,
+          light: bgColor,
+        },
+        width: qrSize,
+      };
 
-      // In a real app, you would use a QR library like qrcode.js
-      // For now, we'll create a simple placeholder
-      const canvas = canvasRef.current;
-      const ctx = canvas.getContext("2d");
-
-      // Clear canvas
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Set background
-      ctx.fillStyle = bgColor;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Create a simple QR-like pattern (placeholder)
-      ctx.fillStyle = qrColor;
-      const blockSize = qrSize / 25;
-
-      for (let i = 0; i < 25; i++) {
-        for (let j = 0; j < 25; j++) {
-          if (Math.random() > 0.5) {
-            ctx.fillRect(i * blockSize, j * blockSize, blockSize, blockSize);
-          }
-        }
-      }
-
-      // Add corner squares (QR code pattern)
-      ctx.fillRect(0, 0, blockSize * 7, blockSize * 7);
-      ctx.fillRect(qrSize - blockSize * 7, 0, blockSize * 7, blockSize * 7);
-      ctx.fillRect(0, qrSize - blockSize * 7, blockSize * 7, blockSize * 7);
-
-      setGeneratedQR(canvas.toDataURL());
+      const qrDataURL = await QRCode.toDataURL(text, options);
+      setGeneratedQR(qrDataURL);
     } catch (error) {
       console.error("QR generation error:", error);
+      setGeneratedQR("");
     } finally {
       setIsGenerating(false);
     }
@@ -245,8 +228,8 @@ const ToolsQRGenerator = () => {
                   ? "در حال تولید..."
                   : "Generating..."
                 : language === "fa"
-                ? "تولید QR کد"
-                : "Generate QR Code"}
+                  ? "تولید QR کد"
+                  : "Generate QR Code"}
             </button>
           </motion.div>
 
@@ -300,14 +283,6 @@ const ToolsQRGenerator = () => {
                 </div>
               )}
             </div>
-
-            {/* Hidden Canvas for QR Generation */}
-            <canvas
-              ref={canvasRef}
-              width={qrSize}
-              height={qrSize}
-              style={{ display: "none" }}
-            />
           </motion.div>
         </div>
 

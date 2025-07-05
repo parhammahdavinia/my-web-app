@@ -594,6 +594,7 @@ export const fa = {
     allTools: "همه ابزارها",
     codeFormatter: "فرمت‌کننده کد",
     qrGenerator: "تولیدکننده QR کد",
+    colorPalette: "تولیدکننده پالت رنگی",
     passwordGenerator: "تولیدکننده رمز عبور",
     hashGenerator: "تولیدکننده هش",
     base64Encoder: "کدگذاری Base64",

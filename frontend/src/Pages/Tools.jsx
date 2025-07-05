@@ -15,6 +15,12 @@ const toolsList = [
     icon: "📱",
   },
   {
+    name: "تولیدکننده پالت رنگی",
+    path: "/tools/color-palette",
+    desc: "ایجاد پالت‌های رنگی زیبا و هماهنگ",
+    icon: "🎨",
+  },
+  {
     name: "تولید رمز عبور قوی",
     path: "/tools/password-generator",
     desc: "ساخت رمز عبور امن و تصادفی",

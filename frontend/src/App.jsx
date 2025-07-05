@@ -4,6 +4,7 @@ import ToolsHashGenerator from "./Pages/ToolsHashGenerator";
 import ToolsPasswordGenerator from "./Pages/ToolsPasswordGenerator";
 import ToolsCodeFormatter from "./Pages/ToolsCodeFormatter";
 import ToolsQRGenerator from "./Pages/ToolsQRGenerator";
+import ToolsColorPalette from "./Pages/ToolsColorPalette";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
@@ -144,6 +145,14 @@ const AppRoutes = () => {
           element={
             <PageTransition>
               <ToolsQRGenerator />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/tools/color-palette"
+          element={
+            <PageTransition>
+              <ToolsColorPalette />
             </PageTransition>
           }
         />

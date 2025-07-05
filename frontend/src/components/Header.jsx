@@ -108,6 +108,11 @@ const Header = () => {
       icon: "📱",
     },
     {
+      to: "/tools/color-palette",
+      text: t("tools.colorPalette"),
+      icon: "🎨",
+    },
+    {
       to: "/tools/password-generator",
       text: t("tools.passwordGenerator"),
       icon: "🔐",

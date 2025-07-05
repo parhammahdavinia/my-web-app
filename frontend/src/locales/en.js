@@ -333,6 +333,7 @@ export const en = {
     allTools: "All Tools",
     codeFormatter: "Code Formatter",
     qrGenerator: "QR Code Generator",
+    colorPalette: "Color Palette Generator",
     passwordGenerator: "Password Generator",
     hashGenerator: "Hash Generator",
     base64Encoder: "Base64 Encoder",

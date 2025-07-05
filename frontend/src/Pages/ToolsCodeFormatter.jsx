@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
 import { HiCode, HiClipboard, HiDownload, HiRefresh } from "react-icons/hi";
+// Using a simpler approach for code formatting
 
 const ToolsCodeFormatter = () => {
   const { t, language } = useLanguage();
@@ -28,18 +29,11 @@ const ToolsCodeFormatter = () => {
     setIsFormatting(true);
 
     try {
-      // Simulate API call for formatting
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // Simple formatting logic (in real app, use proper libraries)
       let formatted = code;
 
       switch (selectedLanguage) {
         case "javascript":
           formatted = formatJavaScript(code);
-          break;
-        case "python":
-          formatted = formatPython(code);
           break;
         case "html":
           formatted = formatHTML(code);
@@ -49,6 +43,18 @@ const ToolsCodeFormatter = () => {
           break;
         case "json":
           formatted = formatJSON(code);
+          break;
+        case "python":
+          formatted = formatPython(code);
+          break;
+        case "php":
+          formatted = formatPHP(code);
+          break;
+        case "java":
+          formatted = formatJava(code);
+          break;
+        case "cpp":
+          formatted = formatCpp(code);
           break;
         default:
           formatted = code;
@@ -64,12 +70,16 @@ const ToolsCodeFormatter = () => {
   };
 
   const formatJavaScript = (code) => {
-    // Basic JavaScript formatting
+    // Enhanced JavaScript formatting
     return code
       .replace(/\s*{\s*/g, " {\n  ")
       .replace(/\s*}\s*/g, "\n}\n")
       .replace(/;\s*/g, ";\n  ")
+      .replace(/\s*,\s*/g, ", ")
+      .replace(/\s*\(\s*/g, "(")
+      .replace(/\s*\)\s*/g, ")")
       .replace(/\n\s*\n/g, "\n")
+      .replace(/\n\s*}/g, "\n}")
       .trim();
   };
 
@@ -82,20 +92,24 @@ const ToolsCodeFormatter = () => {
   };
 
   const formatHTML = (code) => {
-    // Basic HTML formatting
+    // Enhanced HTML formatting
     return code
       .replace(/>\s*</g, ">\n<")
+      .replace(/\s*\/>\s*/g, " />\n")
       .replace(/\n\s*\n/g, "\n")
+      .replace(/\n\s*</g, "\n<")
       .trim();
   };
 
   const formatCSS = (code) => {
-    // Basic CSS formatting
+    // Enhanced CSS formatting
     return code
       .replace(/\s*{\s*/g, " {\n  ")
       .replace(/\s*}\s*/g, "\n}\n")
       .replace(/;\s*/g, ";\n  ")
+      .replace(/\s*:\s*/g, ": ")
       .replace(/\n\s*\n/g, "\n")
+      .replace(/\n\s*}/g, "\n}")
       .trim();
   };
 
@@ -106,6 +120,36 @@ const ToolsCodeFormatter = () => {
     } catch {
       return "Invalid JSON format";
     }
+  };
+
+  const formatPHP = (code) => {
+    // Basic PHP formatting
+    return code
+      .replace(/\s*{\s*/g, " {\n  ")
+      .replace(/\s*}\s*/g, "\n}\n")
+      .replace(/;\s*/g, ";\n  ")
+      .replace(/\n\s*\n/g, "\n")
+      .trim();
+  };
+
+  const formatJava = (code) => {
+    // Basic Java formatting
+    return code
+      .replace(/\s*{\s*/g, " {\n  ")
+      .replace(/\s*}\s*/g, "\n}\n")
+      .replace(/;\s*/g, ";\n  ")
+      .replace(/\n\s*\n/g, "\n")
+      .trim();
+  };
+
+  const formatCpp = (code) => {
+    // Basic C++ formatting
+    return code
+      .replace(/\s*{\s*/g, " {\n  ")
+      .replace(/\s*}\s*/g, "\n}\n")
+      .replace(/;\s*/g, ";\n  ")
+      .replace(/\n\s*\n/g, "\n")
+      .trim();
   };
 
   const copyToClipboard = async (text) => {
@@ -247,8 +291,8 @@ const ToolsCodeFormatter = () => {
                   ? "در حال فرمت کردن..."
                   : "Formatting..."
                 : language === "fa"
-                ? "فرمت کردن کد"
-                : "Format Code"}
+                  ? "فرمت کردن کد"
+                  : "Format Code"}
             </button>
           </motion.div>
 
@@ -275,8 +319,8 @@ const ToolsCodeFormatter = () => {
                       ? "کپی شد!"
                       : "Copied!"
                     : language === "fa"
-                    ? "کپی"
-                    : "Copy"}
+                      ? "کپی"
+                      : "Copy"}
                 </button>
                 <button
                   onClick={downloadCode}
