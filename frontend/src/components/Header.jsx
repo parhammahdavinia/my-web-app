@@ -11,6 +11,7 @@ const Header = () => {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isToolsDropdownOpen, setIsToolsDropdownOpen] = useState(false);
+  const [isMobileToolsOpen, setIsMobileToolsOpen] = useState(false);
   const { t, language } = useLanguage();
 
   useEffect(() => {
@@ -141,10 +142,10 @@ const Header = () => {
   return (
     <>
       <header
-        className={`vazir fixed top-5 left-1/2 transform -translate-x-1/2 w-[90%] z-50 rounded-2xl backdrop-blur-lg bg-gradient-to-r from-blue-500 to-black border border-white/30 shadow-xl transition-all duration-300 ease-in-out
-        ${scrolled ? "py-2 h-[3em] shadow-lg" : "py-4 h-[4em] shadow-cyan-300"}
-        ${showHeader ? "translate-y-0" : "-translate-y-full"}
-      `}
+        className={`vazir fixed top-5 left-1/2 transform -translate-x-1/2 w-[90%] z-50 rounded-2xl backdrop-blur-lg bg-gradient-to-r from-blue-500 to-black  shadow-xl transition-all duration-300 ease-in-out
+    ${scrolled ? "py-6 h-[5em] shadow-2xl" : "py-4 h-[4em] shadow-cyan-300"}
+    ${showHeader ? "translate-y-0" : "-translate-y-full"}
+  `}
       >
         <div className="container mx-auto flex justify-between items-center px-6">
           {/* Logo */}
@@ -268,26 +269,36 @@ const Header = () => {
               <motion.div
                 variants={menuItemVariants}
                 custom={menuItems.length}
-                className="flex flex-col items-center space-y-4"
+                className="flex flex-col items-center space-y-4 w-full"
               >
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold mb-4">
-                    {t("tools.title")}
-                  </h3>
-                  <div className="flex flex-col space-y-3">
+                <button
+                  className="flex items-center gap-2 text-lg font-semibold hover:text-gray-300 transition-colors w-full justify-center"
+                  onClick={() => setIsMobileToolsOpen((prev) => !prev)}
+                >
+                  {t("tools.title")}
+                  <HiChevronDown
+                    size={18}
+                    className={`transition-transform duration-200 ${isMobileToolsOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {isMobileToolsOpen && (
+                  <div className="flex flex-col space-y-3 mt-2">
                     {toolsItems.map((item, index) => (
                       <Link
                         key={item.to}
                         to={item.to}
                         className="flex items-center gap-3 hover:text-gray-300 transition-colors"
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          setIsMobileToolsOpen(false);
+                        }}
                       >
                         <span className="text-xl">{item.icon}</span>
                         <span className="text-base">{item.text}</span>
                       </Link>
                     ))}
                   </div>
-                </div>
+                )}
               </motion.div>
 
               {/* Language Switcher in Mobile Menu */}

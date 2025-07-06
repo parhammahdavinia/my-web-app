@@ -338,4 +338,25 @@ export const en = {
     hashGenerator: "Hash Generator",
     base64Encoder: "Base64 Encoder",
   },
+
+  chat: {
+    title: "Online Support",
+    welcome: "Hello! Welcome to support. How can I help you?",
+    placeholder: "Type your message...",
+    send: "Send",
+    support: "Support",
+    user: "You",
+    typing: "Typing...",
+  },
+  toolsSection: {
+    title: "Our Useful Tools",
+    description:
+      "A collection of online tools for your convenience. Whatever you need is here!",
+    seeAll: "See all tools",
+  },
+  servicesSection: {
+    title: "Our Services",
+    description: "See some of our most important services here.",
+    seeAll: "See all services",
+  },
 };

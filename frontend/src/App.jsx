@@ -22,6 +22,7 @@ import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
 import { Suspense } from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import ChatSupport from "./components/ChatSupport";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -168,6 +169,7 @@ const App = () => (
         <Header />
         <AppRoutes />
         <ScrollToTop />
+        <ChatSupport />
       </Suspense>
     </Router>
   </LanguageProvider>

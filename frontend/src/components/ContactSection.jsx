@@ -8,6 +8,7 @@ import {
   HiUser,
   HiChat,
 } from "react-icons/hi";
+import { FaLinkedin, FaComments } from "react-icons/fa";
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -66,16 +67,16 @@ const ContactSection = () => {
 
   const contactInfo = [
     {
-      icon: <HiMail className="text-3xl text-blue-400" />,
-      titleKey: "contact.info.email.title",
-      infoKey: "contact.info.email.value",
-      link: "mailto:parhammahdavinia@gmail.com",
+      icon: <FaLinkedin className="text-3xl text-blue-500" />,
+      title: "LinkedIn",
+      info: "linkedin.com/in/parhammahdavinia",
+      link: "https://www.linkedin.com/in/parhammahdavinia/",
     },
     {
-      icon: <HiPhone className="text-3xl text-green-400" />,
-      titleKey: "contact.info.phone.title",
-      infoKey: "contact.info.phone.value",
-      link: "tel:+989392206332",
+      icon: <FaComments className="text-3xl text-green-400" />,
+      title: t("chat.title"),
+      info: t("chat.title"),
+      link: "#chat-support",
     },
     {
       icon: <HiLocationMarker className="text-3xl text-red-400" />,
@@ -221,23 +222,46 @@ const ContactSection = () => {
 
           {/* Contact Info */}
           <div className="space-y-8">
-            {contactInfo.map((info, index) => (
+            <div className="flex flex-col gap-8">
+              {/* باکس لینکدین */}
               <a
-                key={index}
-                href={info.link}
+                href="https://www.linkedin.com/in/yourprofile/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-start p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 hover:border-blue-400 transition-all duration-300 transform hover:scale-105"
                 data-aos="fade-left"
-                data-aos-delay={index * 100}
+                data-aos-delay="0"
               >
-                <div className="mr-4">{info.icon}</div>
+                <div className="mr-4">
+                  <FaLinkedin className="text-3xl text-blue-500" />
+                </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    {t(info.titleKey)}
-                  </h3>
-                  <p className="text-gray-300">{t(info.infoKey)}</p>
+                  <h3 className="text-xl font-semibold mb-2">LinkedIn</h3>
+                  <p className="text-gray-300">linkedin.com/in/yourprofile</p>
                 </div>
               </a>
-            ))}
+              {/* باکس چت‌بات */}
+              <div
+                className="flex items-start p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 hover:border-green-400 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                data-aos="fade-left"
+                data-aos-delay="100"
+                onClick={() =>
+                  document
+                    .querySelector(".fixed.bottom-8.right-24 button")
+                    .click()
+                }
+              >
+                <div className="mr-4">
+                  <FaComments className="text-3xl text-green-400" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {t("chat.title")}
+                  </h3>
+                  <p className="text-gray-300">{t("chat.welcome")}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

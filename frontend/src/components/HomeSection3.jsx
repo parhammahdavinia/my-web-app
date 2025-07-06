@@ -31,7 +31,7 @@ const HomeSection3 = () => {
 
   return (
     <section className="py-16 bg-gradient-to-b from-blue-500 to-black text-white text-center h-screen overflow-hidden relative">
-      <h2 className="text-4xl md:text-6xl absolute top-3 text-shadow-2xs inset-0 z-10 font-extrabold tracking-wide">
+      <h2 className="text-4xl md:text-6xl absolute top-3 text-shadow-2xs inset-0 z-20 font-extrabold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-white">
         {t("home.section3.title")}
       </h2>
       <img
