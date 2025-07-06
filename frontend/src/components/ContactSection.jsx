@@ -225,7 +225,7 @@ const ContactSection = () => {
             <div className="flex flex-col gap-8">
               {/* باکس لینکدین */}
               <a
-                href="https://www.linkedin.com/in/yourprofile/"
+                href="https://www.linkedin.com/in/parhammahdavinia/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 hover:border-blue-400 transition-all duration-300 transform hover:scale-105"
