@@ -69,7 +69,7 @@ const ContactSection = () => {
     {
       icon: <FaLinkedin className="text-3xl text-blue-500" />,
       title: "LinkedIn",
-      info: "linkedin.com/in/parhammahdavinia",
+      info: "parhammahdavinia",
       link: "https://www.linkedin.com/in/parhammahdavinia/",
     },
     {
@@ -237,7 +237,9 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">LinkedIn</h3>
-                  <p className="text-gray-300">linkedin.com/in/yourprofile</p>
+                  <p className="text-gray-300">
+                    linkedin.com/in/parhammahdavinia
+                  </p>
                 </div>
               </a>
               {/* باکس چت‌بات */}

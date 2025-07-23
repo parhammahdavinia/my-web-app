@@ -45,13 +45,11 @@ export const LanguageProvider = ({ children }) => {
       }
     }
 
-    // اطمینان از اینکه همیشه string برگردانده می‌شود
-    if (typeof value === "string") {
+    // فقط رشته یا آرایه را برگردان، اگر آبجکت بود مقدار کلید را برگردان
+    if (typeof value === "string" || Array.isArray(value)) {
       return value;
-    } else if (typeof value === "object") {
-      return key; // اگر object است، کلید را برگردان
     } else {
-      return key; // در هر صورت کلید را برگردان
+      return key;
     }
   };
 

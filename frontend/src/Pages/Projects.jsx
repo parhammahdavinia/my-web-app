@@ -15,9 +15,9 @@ const Projects = () => {
         language === "fa"
           ? "یک فروشگاه آنلاین کامل با سیستم مدیریت محتوا، پرداخت و مدیریت سفارشات"
           : "A complete e-commerce store with CMS, payment system, and order management",
-      image: "/images/1.png",
+      image: "/images/je.png",
       category: "web",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      technologies: ["React", "Django", "tailwindcss"],
       liveUrl: "#",
       githubUrl: "#",
       featured: true,
@@ -39,30 +39,24 @@ const Projects = () => {
     },
     {
       id: 3,
-      title:
-        language === "fa" ? "سیستم مدیریت محتوا" : "Content Management System",
+      title: language === "fa" ? "گالری" : "gallery ",
       description:
-        language === "fa"
-          ? "سیستم مدیریت محتوا با رابط کاربری مدرن و قابلیت‌های پیشرفته"
-          : "Content management system with modern UI and advanced features",
-      image: "/images/5.png",
+        language === "fa" ? "گالری برای آرت" : "gallery for showing art",
+      image: "/images/lnd.png",
       category: "web",
-      technologies: ["Vue.js", "Django", "PostgreSQL"],
+      technologies: ["react", "Django", "tailwindcss"],
       liveUrl: "#",
       githubUrl: "#",
       featured: false,
     },
     {
       id: 4,
-      title:
-        language === "fa"
-          ? "پلتفرم یادگیری آنلاین"
-          : "Online Learning Platform",
+      title: language === "fa" ? "پلتفرم کریپتو" : "crypto app",
       description:
         language === "fa"
-          ? "پلتفرم آموزش آنلاین با ویدیو، آزمون و سیستم گواهینامه"
-          : "Online learning platform with video, quizzes, and certification system",
-      image: "/images/9.JPG",
+          ? "نمایش  قیمت رمز ارز ها "
+          : "crypto app  for vibe co",
+      image: "/images/sar.png",
       category: "web",
       technologies: ["Next.js", "Node.js", "AWS", "Stripe"],
       liveUrl: "#",
@@ -71,14 +65,11 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: language === "fa" ? "اپلیکیشن فیتنس" : "Fitness App",
-      description:
-        language === "fa"
-          ? "اپلیکیشن فیتنس با ردیابی تمرینات، تغذیه و اهداف شخصی"
-          : "Fitness app with workout tracking, nutrition, and personal goals",
-      image: "/images/90.png",
+      title: language === "fa" ? "منو رستوران" : "resturant menu",
+      description: language === "fa" ? "منو رستوران با" : "resturant menu ",
+      image: "/images/med.png",
       category: "mobile",
-      technologies: ["Flutter", "Firebase", "Google Fit API"],
+      technologies: ["react", "django", "tailwindcss"],
       liveUrl: "#",
       githubUrl: "#",
       featured: false,

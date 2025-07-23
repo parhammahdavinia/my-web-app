@@ -131,11 +131,20 @@ const Header = () => {
   ];
 
   const menuItems = [
-    { to: "/", text: t("home") },
-    { to: "/about", text: t("about") },
-    { to: "/blog", text: t("blog") },
-    { to: "/skills", text: t("skills") },
-    { to: "/projects", text: t("projects") },
+    { to: "/", text: typeof t("home") === "string" ? t("home") : "خانه" },
+    {
+      to: "/about",
+      text: typeof t("about") === "string" ? t("about") : "درباره ما",
+    },
+    { to: "/blog", text: typeof t("blog") === "string" ? t("blog") : "بلاگ" },
+    {
+      to: "/skills",
+      text: typeof t("skills") === "string" ? t("skills") : "مهارت‌ها",
+    },
+    {
+      to: "/projects",
+      text: typeof t("projects") === "string" ? t("projects") : "پروژه‌ها",
+    },
     { to: "/services", text: t("language") === "fa" ? "سرویس‌ها" : "Service" },
   ];
 

@@ -40,6 +40,29 @@ export const en = {
     backend: "Backend",
     tools: "Tools",
     seeMore: "See More",
+    list: {
+      frontend: [
+        "HTML5, CSS3, JavaScript",
+        "React.js (Hooks, Context API), React Router, Redux Toolkit",
+        "TailwindCSS, Framer Motion, AOS",
+      ],
+      backend: ["Django (Basic experience in API development)"],
+      os: ["Linux (Ubuntu, CentOS)"],
+      webserver: ["Nginx (Configuration, Load Balancing, SSL)"],
+      container: ["Docker, Docker Compose"],
+      monitoring: [
+        "Prometheus, Grafana (Server performance monitoring, alert configuration)",
+      ],
+      security: [
+        "Fail2Ban (Brute-force protection), UFW (Firewall configuration), Nmap (Network scanning)",
+      ],
+      tools: [
+        "Git, GitHub (Version control, repository management), Axios, Fetch",
+      ],
+      concepts: [
+        "Responsive Design, Mobile-First Development, DevOps practices, Bash scripting",
+      ],
+    },
   },
 
   services: {

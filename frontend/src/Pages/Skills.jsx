@@ -7,19 +7,22 @@ const Skills = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className=" bg-white/10 flex-col backdrop-blur-md p-6 rounded-xl shadow-lg hover:border-black transform hover:scale-105 transition-transform duration-300 flex items-center justify-center h-[13em] border-[.1em] border-white">
             <h3 className="text-xl font-bold mb-2">Frontend</h3>
-            <p>React, Tailwind CSS, JavaScript, TypeScript</p>
+            <p>
+              React, Tailwind CSS, React.js (Hooks, Context API), React Router,
+              Redux Toolkit
+            </p>
           </div>
           <div className=" bg-white/10 flex-col backdrop-blur-md p-6 rounded-xl shadow-lg hover:border-black transform hover:scale-105 transition-transform duration-300 flex items-center justify-center h-[13em] border-[.1em] border-white">
             <h3 className="text-xl font-bold mb-2">Backend</h3>
-            <p>Django, Node.js, Express, PostgreSQL</p>
+            <p>Django (Basic experience in API development), PostgreSQL</p>
           </div>
           <div className=" bg-white/10 flex-col backdrop-blur-md p-6 rounded-xl shadow-lg hover:border-black transform hover:scale-105 transition-transform duration-300 flex items-center justify-center h-[13em] border-[.1em] border-white">
             <h3 className="text-xl font-bold mb-2">Tools</h3>
-            <p>Git, Docker, Webpack, Vite</p>
+            <p>Git, Docker, Vite</p>
           </div>
           <div className=" bg-white/10 flex-col backdrop-blur-md p-6 rounded-xl shadow-lg hover:border-black transform hover:scale-105 transition-transform duration-300 flex items-center justify-center h-[13em] border-[.1em] border-white">
             <h3 className="text-xl font-bold mb-2">Other skills</h3>
-            <p>UI/UX Design, Agile, Scrum</p>
+            <p>UI/UX Design,Scrum</p>
           </div>
         </div>
       </div>

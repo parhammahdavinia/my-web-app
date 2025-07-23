@@ -40,6 +40,25 @@ export const fa = {
     backend: "بک‌اند",
     tools: "ابزارها",
     seeMore: "مشاهده بیشتر",
+    list: {
+      frontend: [
+        "HTML5، CSS3، JavaScript",
+        "React.js (هوکس، Context API)، React Router، Redux Toolkit",
+        "TailwindCSS، Framer Motion، AOS",
+      ],
+      backend: ["Django (تجربه پایه در توسعه API)"],
+      os: ["لینوکس (اوبونتو، سنت‌اواس)"],
+      webserver: ["Nginx (پیکربندی، لود بالانسینگ، SSL)"],
+      container: ["Docker، Docker Compose"],
+      monitoring: ["Prometheus، Grafana (مانیتورینگ سرور، تنظیم هشدار)"],
+      security: [
+        "Fail2Ban (محافظت Brute-force)، UFW (فایروال)، Nmap (اسکن شبکه)",
+      ],
+      tools: ["Git، GitHub، Axios، Fetch"],
+      concepts: [
+        "طراحی ریسپانسیو، توسعه موبایل‌فرست، DevOps، اسکریپت‌نویسی Bash",
+      ],
+    },
   },
 
   services: {

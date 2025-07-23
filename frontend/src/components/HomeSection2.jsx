@@ -20,7 +20,7 @@ const HomeSection2 = () => {
     <section className="relative flex flex-col justify-center items-center bg-gradient-to-t from-blue-500 to-black text-white py-16 md:h-screen 300">
       <h1
         data-aos="fade-down"
-        className="text-4xl md:text-6xl absolute top-0 z-10 font-extrabold text-center mb-12 tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to bg-white"
+        className="text-4xl md:text-6xl  z-10 font-extrabold text-center mb-12 tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to bg-white"
       >
         {t("skills.title")}
       </h1>
@@ -76,7 +76,7 @@ const HomeSection2 = () => {
         <div className="text-center absolute -inset-x-0.5 z-10 md:mt-[4em]">
           <Link to="/Skills">
             <button className="border-2 text-white hover:text-black font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1">
-              {t("skills.seeMore")}
+              {t("see more")}
             </button>
           </Link>
         </div>
