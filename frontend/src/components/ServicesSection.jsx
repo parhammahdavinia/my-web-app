@@ -69,26 +69,26 @@ const ServicesSection = () => {
             <div
               key={service.id}
               data-aos="flip-up"
-              className="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/20 hover:border-blue-400 transition-all duration-300 transform hover:scale-105"
+              className="bg-white/10 hover:bg-white hover:text-black backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/20 hover:border-black transition-all duration-300 transform hover:scale-105"
             >
               <div className="flex items-center mb-6">
                 <div className="mr-4">{service.icon}</div>
                 <h3 className="text-2xl font-bold">{t(service.titleKey)}</h3>
               </div>
 
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className=" mb-6 leading-relaxed">
                 {t(service.descriptionKey)}
               </p>
 
               <div className="space-y-2">
-                <h4 className="font-semibold text-blue-300 mb-3">
+                <h4 className="font-semibold text-blue-300  mb-3">
                   {t("services.technologies")}
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {service.features.map((feature, index) => (
                     <span
                       key={index}
-                      className="bg-blue-500/20 text-blue-200 px-3 py-1 rounded-full text-sm border border-blue-400/30"
+                      className="bg-blue-500/20 text-blue-500  px-3 py-1 rounded-full text-sm border border-blue-400/30"
                     >
                       {feature}
                     </span>

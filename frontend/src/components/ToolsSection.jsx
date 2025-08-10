@@ -77,15 +77,15 @@ const ToolsSection = () => {
             <Link
               to={tool.path}
               key={tool.path}
-              className="bg-white/10 backdrop-blur-m rounded-xl shadow-lg p-6 flex flex-col items-center border border-blue-100 hover:shadow-2xl transition-all cursor-pointer hover:bg-blue-400/20 group"
+              className="bg-white/10 hover:bg-white backdrop-blur-m rounded-xl shadow-lg p-6 flex flex-col items-center border border-blue-100 hover:shadow-2xl transition-all cursor-pointer  group"
             >
               <span className="text-4xl mb-3 group-hover:scale-110 transition-transform">
                 {tool.icon}
               </span>
-              <span className="text-xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400 group-hover:text-white">
+              <span className="text-xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400 group-hover:text-black">
                 {tool.nameKey[language]}
               </span>
-              <span className="text-white text-sm mb-4 text-center group-hover:text-blue-100">
+              <span className="text-white text-sm mb-4 text-center group-hover:text-blue-500">
                 {tool.desc[language]}
               </span>
             </Link>

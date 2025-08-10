@@ -3,6 +3,7 @@ import { Virtual, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useLanguage } from "../contexts/LanguageContext";
+import { Link } from "react-router";
 
 const HomeSection3 = () => {
   const { t } = useLanguage();
@@ -66,7 +67,7 @@ const HomeSection3 = () => {
                   <h3 className="text-2xl font-semibold mb-2">
                     {t(project.titleKey)}
                   </h3>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-300 text-sm ">
                     {t(project.descriptionKey)}
                   </p>
                 </div>
@@ -76,10 +77,13 @@ const HomeSection3 = () => {
         </Swiper>
 
         {/* Button */}
-        <div className="absolute -inset-x-0.5 z-10 mt-[30em]">
-          <button className="border-2 text-white hover:text-black font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1">
-            {t("home.section3.seeMore")}
-          </button>
+
+        <div className="absolute -inset-x-0.5 z-20 mt-[30em]">
+          <Link to="projects">
+            <button className="border-2 text-white hover:text-black font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1">
+              {t("home.section3.seeMore")}
+            </button>
+          </Link>
         </div>
       </div>
     </section>

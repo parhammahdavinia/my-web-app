@@ -13,11 +13,6 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3 flex flex-col justify-center items-center">
               <li>
-                <Link to="/" className="hover:text-gray-200 transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
                 <Link
                   to="/services"
                   className="hover:text-gray-200 transition-colors"
@@ -41,14 +36,7 @@ const Footer = () => {
                   tools
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/skills"
-                  className="hover:text-gray-200 transition-colors"
-                >
-                  Skills
-                </Link>
-              </li>
+
               <li>
                 <Link
                   to="/about"
@@ -111,7 +99,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 border-t border-gray-500/30 pt-4 text-center">
+        <div className="mt-8 border-t border-gray-300 pt-4 text-center">
           <p className="text-sm text-gray-300">
             © {new Date().getFullYear()}All right reserved to PMcode
           </p>

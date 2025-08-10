@@ -26,7 +26,7 @@ const HomeSection1 = () => {
         </div>
         <Link to="/about">
           <Button variant="secondary" data-aos="fade-up" data-aos-delay="400">
-            {language === "fa" ? t("about") : t("about.title")}
+            {language === "fa" ? t("about.title") : t("about.title")}
           </Button>
         </Link>
       </div>

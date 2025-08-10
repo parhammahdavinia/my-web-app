@@ -66,7 +66,7 @@ export const en = {
   },
 
   services: {
-    title: "Our Services",
+    title: " Services",
     subtitle:
       "We provide a complete set of software development services to take your business to the next level",
     items: {
@@ -105,7 +105,7 @@ export const en = {
   },
 
   contact: {
-    title: "Contact Us",
+    title: "Contact",
     subtitle:
       "We are ready to turn your digital dreams into reality. Get in touch with us",
     form: {
@@ -163,7 +163,7 @@ export const en = {
 
   // About Page
   about: {
-    title: "About Us",
+    title: "About",
     subtitle:
       "We are a team of young and motivated professionals who transform your digital dreams into reality with passion and creativity",
     since: "Serving you since 2019",
@@ -331,7 +331,7 @@ export const en = {
 
   // Projects Page
   projects: {
-    title: "Our Projects",
+    title: "Projects",
     subtitle:
       "Our portfolio showcasing the skills and creativity of our team in software development",
     categories: {

@@ -1,7 +1,7 @@
 export const fa = {
   // Navigation
   home: "خانه",
-  about: "درباره ما",
+  about: "درباره ",
   blog: "بلاگ",
   skills: "مهارت‌ها",
   projects: "پروژه‌ها",

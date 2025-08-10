@@ -76,14 +76,11 @@ const Projects = () => {
     },
     {
       id: 6,
-      title: language === "fa" ? "سیستم رزرو هتل" : "Hotel Booking System",
-      description:
-        language === "fa"
-          ? "سیستم رزرو هتل با جستجوی پیشرفته و سیستم پرداخت امن"
-          : "Hotel booking system with advanced search and secure payment",
+      title: language === "fa" ? "شرکت مپ" : "mapp company",
+      description: language === "fa" ? "شرکت مپ" : "mapp company E-Commerce ",
       image: "/images/ec.png",
       category: "web",
-      technologies: ["React", "Express.js", "MongoDB", "PayPal"],
+      technologies: ["React", "django", "tailwindcss"],
       liveUrl: "#",
       githubUrl: "#",
       featured: false,
