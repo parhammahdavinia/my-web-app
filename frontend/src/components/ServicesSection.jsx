@@ -88,7 +88,7 @@ const ServicesSection = () => {
                   {service.features.map((feature, index) => (
                     <span
                       key={index}
-                      className="bg-blue-500/20 text-blue-500  px-3 py-1 rounded-full text-sm border border-blue-400/30"
+                      className="bg-blue-3\100/20 text-blue-400  px-3 py-1 rounded-full text-sm border border-blue-400/30"
                     >
                       {feature}
                     </span>
@@ -105,7 +105,6 @@ const ServicesSection = () => {
               data-aos="zoom-in"
               className="border-2 text-white hover:text-black font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:-translate-y-1"
             >
-              {t("services.freeConsultation")} /{" "}
               {t("language") === "fa"
                 ? "مشاهده همه سرویس‌ها"
                 : "View All Services"}

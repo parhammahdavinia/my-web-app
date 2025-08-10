@@ -9,6 +9,7 @@ export const fa = {
 
   // Home Page
   home: {
+    title: "خانه",
     section1: {
       create: "ایجاد و شخصی‌سازی کسب‌وکار دیجیتال شما",
       simplest: "شرکت شما به ساده‌ترین روش ممکن",

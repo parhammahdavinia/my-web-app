@@ -9,6 +9,7 @@ export const en = {
 
   // Home Page
   home: {
+    title: "home",
     section1: {
       create: "Create and personalize your digital business",
       simplest: "Your company in the simplest way possible",

@@ -133,7 +133,7 @@ const Header = () => {
   const menuItems = [
     {
       to: "/",
-      text: typeof t("home") === "string" ? t("home") : "خانه",
+      text: typeof t("Home") === "string" ? t("Home") : "خانه",
     },
     {
       to: "/about",
@@ -143,6 +143,11 @@ const Header = () => {
     {
       to: "/blog",
       text: typeof t("blog.title") === "string" ? t("blog.title") : "بلاگ",
+    },
+    {
+      to: "/services",
+      text:
+        typeof t("services.title") === "string" ? t("services.title") : "بلاگ",
     },
 
     {
@@ -169,7 +174,7 @@ const Header = () => {
             data-aos="zoom-in"
             className="text-lg font-bold flex flex-row gap-1 hover:opacity-80 transition-opacity"
           >
-            <div className="bg-white px-1 py-0.5 text-blue-700 rounded-sm">
+            <div className="bg-white px-1 py-0.5 text-blue-700 rounded-sm hover:scale-110">
               PM
             </div>
             <div className="text-white">code</div>
@@ -212,7 +217,7 @@ const Header = () => {
                     animate="open"
                     exit="closed"
                     variants={dropdownVariants}
-                    className="absolute top-full left-0 mt-2 w-64 bg-gray-800/95 backdrop-blur-sm rounded-xl border border-gray-700/50 shadow-2xl overflow-hidden"
+                    className="absolute top-full left-0 mt-2 w-64 bg-blue-800/95 backdrop-blur-sm rounded-xl border  shadow-2xl overflow-hidden"
                   >
                     <div className="py-2">
                       {toolsItems.map((item, index) => (
@@ -220,7 +225,7 @@ const Header = () => {
                           key={item.to}
                           to={item.to}
                           onClick={() => setIsToolsDropdownOpen(false)}
-                          className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-700/50 transition-all duration-200 group"
+                          className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-blue-700/50 transition-all duration-200 group"
                         >
                           <span className="text-lg">{item.icon}</span>
                           <span className="text-sm">{item.text}</span>
