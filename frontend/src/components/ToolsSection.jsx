@@ -62,7 +62,7 @@ const toolsList = [
 const ToolsSection = () => {
   const { t, language } = useLanguage();
   return (
-    <section className="py-16 bg-gradient-to-t from-blue-500 to-black text-white relative overflow-hidden ">
+    <section className="py-16 bg-gradient-to-t from-blue-500 to-black text-white relative  ">
       <div className="flex flex-col justify-center items-center mx-auto px-4 relative z-10 h-screen">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-white">
