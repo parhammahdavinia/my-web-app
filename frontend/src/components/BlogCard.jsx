@@ -16,6 +16,7 @@ const BlogCard = ({ post }) => {
   const [dislikes, setDislikes] = useState(post.dislikes);
   const [userVote, setUserVote] = useState(post.user_vote);
   const [isVoting, setIsVoting] = useState(false);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const { t, isRTL } = useLanguage();
 
   // بروزرسانی state وقتی post تغییر می‌کند
@@ -62,97 +63,32 @@ const BlogCard = ({ post }) => {
   };
 
   return (
-    <div className="group bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg text-white border border-white/20 hover:border-blue-400/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-      {/* تصویر */}
-      <Link to={`/blog/${post.id}`} className="block">
-        <div className="relative overflow-hidden rounded-lg mb-6">
-          <img
-            src={post.image}
-            alt={post.title}
-            className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </div>
-      </Link>
+    <div className="group relative overflow-hidden rounded-xl shadow-lg text-white border border-white/20 hover:border-blue-400/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+      {/* پس‌زمینه تصویر تمام‌کارت */}
+      <img
+        src={post.image}
+        alt={post.title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />
 
-      {/* محتوا */}
-      <div className="space-y-4">
-        {/* عنوان */}
-        <Link to={`/blog/${post.id}`} className="block">
-          <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
-            {post.title}
-          </h3>
-        </Link>
+      {/* عنوان وسط کارت */}
+      <div className="relative z-10 flex items-center justify-center min-h-[12rem] sm:min-h-[14rem] md:min-h-[16rem] p-6 text-center">
+        <h3 className="text-2xl md:text-3xl font-extrabold text-white drop-shadow-lg">
+          {post.title}
+        </h3>
+      </div>
 
-        {/* توضیحات */}
-        <p className="text-gray-300 leading-relaxed line-clamp-3">
-          {post.description}
-        </p>
-
-        {/* تاریخ */}
-        <div className="flex items-center text-sm text-gray-400">
+      {/* نوار پایینی: تاریخ و دکمه ادامه مطلب */}
+      <div className="relative z-10 flex items-center justify-between gap-3 px-4 py-3 bg-black/30 backdrop-blur-sm">
+        <div className="flex items-center text-sm text-gray-200">
           <FaCalendarAlt className="mr-2" />
           {formatDate(post.created_at)}
         </div>
 
-        {/* دکمه‌های رای‌گیری */}
-        <div className="flex items-center justify-between pt-4 border-t border-white/20">
-          {/* لایک */}
+        <div className="flex items-center">
           <button
-            onClick={() => handleVote("like")}
-            disabled={isVoting}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 ${
-              userVote === "like"
-                ? "bg-green-500/20 text-green-300 border border-green-400/50"
-                : "bg-white/10 text-gray-300 hover:bg-green-500/20 hover:text-green-300 hover:border-green-400/50 border border-white/20"
-            } ${
-              isVoting ? "opacity-50 cursor-not-allowed" : "hover:scale-105"
-            }`}
-          >
-            {userVote === "like" ? (
-              <FaHeart className="text-green-400" />
-            ) : (
-              <FaThumbsUp />
-            )}
-            <span className="font-medium">{likes}</span>
-          </button>
-
-          {/* دیس‌لایک */}
-          <button
-            onClick={() => handleVote("dislike")}
-            disabled={isVoting}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 ${
-              userVote === "dislike"
-                ? "bg-red-500/20 text-red-300 border border-red-400/50"
-                : "bg-white/10 text-gray-300 hover:bg-red-500/20 hover:text-red-300 hover:border-red-400/50 border border-white/20"
-            } ${
-              isVoting ? "opacity-50 cursor-not-allowed" : "hover:scale-105"
-            }`}
-          >
-            <FaThumbsDown />
-            <span className="font-medium">{dislikes}</span>
-          </button>
-        </div>
-
-        {/* نمایش وضعیت رای کاربر */}
-        {userVote && (
-          <div className="text-center">
-            <span
-              className={`text-sm px-3 py-1 rounded-full ${
-                userVote === "like"
-                  ? "bg-green-500/20 text-green-300 border border-green-400/30"
-                  : "bg-red-500/20 text-red-300 border border-red-400/30"
-              }`}
-            >
-              {userVote === "like" ? t("youLiked") : t("youDisliked")}
-            </span>
-          </div>
-        )}
-
-        {/* دکمه ادامه مطلب */}
-        <div className="text-center pt-4">
-          <Link
-            to={`/blog/${post.id}`}
+            onClick={() => setIsOverlayOpen(true)}
             className="inline-flex items-center gap-2 text-blue-300 hover:text-blue-100 transition-colors font-medium"
           >
             {t("readMore")}
@@ -169,9 +105,73 @@ const BlogCard = ({ post }) => {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-          </Link>
+          </button>
         </div>
       </div>
+
+      {/* Overlay توضیحات کامل */}
+      {isOverlayOpen && (
+        <div className="absolute inset-0 z-20 bg-black/80 backdrop-blur-sm p-6 overflow-y-auto">
+          <div className="max-w-prose mx-auto">
+            <div className="flex items-start justify-between mb-4">
+              <h4 className="text-xl md:text-2xl font-bold">{post.title}</h4>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => setIsOverlayOpen(false)}
+                  className="text-gray-200 hover:text-white transition-colors"
+                  aria-label="close"
+                  title={isRTL ? "بستن" : "Close"}
+                >
+                  <svg
+                    className="w-6 h-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div className="text-gray-200 leading-8 whitespace-pre-line">
+              {post.description}
+            </div>
+          </div>
+          {/* دکمه‌های رأی پایین راست */}
+          <div className="absolute bottom-4 right-4 flex items-center gap-3">
+            <button
+              onClick={() => handleVote("like")}
+              disabled={isVoting}
+              className={`transition-transform ${isVoting ? "opacity-50 cursor-not-allowed" : "hover:scale-110"}`}
+              aria-label="like"
+              title={isRTL ? "پسندیدم" : "Like"}
+            >
+              {userVote === "like" ? (
+                <FaHeart className="w-7 h-7 text-green-400" />
+              ) : (
+                <FaThumbsUp className="w-7 h-7 text-gray-200 hover:text-green-300" />
+              )}
+            </button>
+            <button
+              onClick={() => handleVote("dislike")}
+              disabled={isVoting}
+              className={`transition-transform ${isVoting ? "opacity-50 cursor-not-allowed" : "hover:scale-110"}`}
+              aria-label="dislike"
+              title={isRTL ? "نپسندیدم" : "Dislike"}
+            >
+              <FaThumbsDown
+                className={`w-7 h-7 ${userVote === "dislike" ? "text-red-400" : "text-gray-200 hover:text-red-300"}`}
+              />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

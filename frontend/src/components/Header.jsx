@@ -162,7 +162,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`vazir fixed top-5 left-1/2 transform -translate-x-1/2 w-[90%] z-50 rounded-2xl backdrop-blur-lg bg-gradient-to-r from-blue-500 to-black  shadow-xl transition-all duration-300 ease-in-out
+        className={`vazir fixed top-5 left-1/2 transform -translate-x-1/2 w-[90%] z-50 rounded-2xl backdrop-blur-lg bg-gradient-to-r from-blue-500 to-black    shadow-xl transition-all duration-300 ease-in-out
     ${scrolled ? "py-6 h-[5em] shadow-2xl" : "py-4 h-[4em] shadow-cyan-300"}
     ${showHeader ? "translate-y-0" : "-translate-y-full"}
   `}
@@ -217,7 +217,7 @@ const Header = () => {
                     animate="open"
                     exit="closed"
                     variants={dropdownVariants}
-                    className="absolute top-full left-0 mt-2 w-64 bg-blue-800/95 backdrop-blur-sm rounded-xl border  shadow-2xl overflow-hidden"
+                    className="absolute top-full left-0 mt-2 w-64 bg-blue-900/95 backdrop-blur-sm rounded-xl border  shadow-2xl overflow-hidden"
                   >
                     <div className="py-2">
                       {toolsItems.map((item, index) => (
