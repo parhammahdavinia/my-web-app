@@ -18,7 +18,7 @@ const Blog = () => {
     <div className="min-h-screen bg-gradient-to-t from-blue-500 to-black py-[10em]">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl text-amber-50 font-bold text-center mb-8">
-          بلاگ
+          blog
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {posts.map((post) => (

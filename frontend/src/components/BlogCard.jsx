@@ -79,11 +79,41 @@ const BlogCard = ({ post }) => {
         </h3>
       </div>
 
-      {/* نوار پایینی: تاریخ و دکمه ادامه مطلب */}
+      {/* نوار پایینی: تاریخ، دکمه‌های رأی و دکمه ادامه مطلب */}
       <div className="relative z-10 flex items-center justify-between gap-3 px-4 py-3 bg-black/30 backdrop-blur-sm">
-        <div className="flex items-center text-sm text-gray-200">
-          <FaCalendarAlt className="mr-2" />
-          {formatDate(post.created_at)}
+        <div className="flex items-center gap-4 text-sm text-gray-200">
+          <div className="flex items-center">
+            <FaCalendarAlt className="mr-2" />
+            {formatDate(post.created_at)}
+          </div>
+
+          {/* دکمه‌های رأی */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => handleVote("like")}
+              disabled={isVoting}
+              className={`transition-transform ${isVoting ? "opacity-50 cursor-not-allowed" : "hover:scale-110"}`}
+              aria-label="like"
+              title={isRTL ? "پسندیدم" : "Like"}
+            >
+              {userVote === "like" ? (
+                <FaHeart className="w-4 h-4 text-green-400" />
+              ) : (
+                <FaThumbsUp className="w-4 h-4 text-gray-200 hover:text-green-300" />
+              )}
+            </button>
+            <button
+              onClick={() => handleVote("dislike")}
+              disabled={isVoting}
+              className={`transition-transform ${isVoting ? "opacity-50 cursor-not-allowed" : "hover:scale-110"}`}
+              aria-label="dislike"
+              title={isRTL ? "نپسندیدم" : "Dislike"}
+            >
+              <FaThumbsDown
+                className={`w-4 h-4 ${userVote === "dislike" ? "text-red-400" : "text-gray-200 hover:text-red-300"}`}
+              />
+            </button>
+          </div>
         </div>
 
         <div className="flex items-center">
@@ -142,33 +172,6 @@ const BlogCard = ({ post }) => {
             <div className="text-gray-200 leading-8 whitespace-pre-line">
               {post.description}
             </div>
-          </div>
-          {/* دکمه‌های رأی پایین راست */}
-          <div className="absolute bottom-4 right-4 flex items-center gap-3">
-            <button
-              onClick={() => handleVote("like")}
-              disabled={isVoting}
-              className={`transition-transform ${isVoting ? "opacity-50 cursor-not-allowed" : "hover:scale-110"}`}
-              aria-label="like"
-              title={isRTL ? "پسندیدم" : "Like"}
-            >
-              {userVote === "like" ? (
-                <FaHeart className="w-7 h-7 text-green-400" />
-              ) : (
-                <FaThumbsUp className="w-7 h-7 text-gray-200 hover:text-green-300" />
-              )}
-            </button>
-            <button
-              onClick={() => handleVote("dislike")}
-              disabled={isVoting}
-              className={`transition-transform ${isVoting ? "opacity-50 cursor-not-allowed" : "hover:scale-110"}`}
-              aria-label="dislike"
-              title={isRTL ? "نپسندیدم" : "Dislike"}
-            >
-              <FaThumbsDown
-                className={`w-7 h-7 ${userVote === "dislike" ? "text-red-400" : "text-gray-200 hover:text-red-300"}`}
-              />
-            </button>
           </div>
         </div>
       )}
