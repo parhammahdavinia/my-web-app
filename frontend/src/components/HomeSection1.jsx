@@ -6,7 +6,7 @@ const HomeSection1 = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-gradient-to-b from-blue-500 to-black">
+    <section className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-gradient-to-b from-[#03A5FD] to-black">
       <img
         src="images/4.png"
         className="absolute bottom-0 bg-contain z-20 lg:shadow"

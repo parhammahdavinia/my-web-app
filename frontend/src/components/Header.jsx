@@ -163,21 +163,18 @@ const Header = () => {
     <>
       <header
         className={`vazir fixed top-5 left-1/2 transform -translate-x-1/2 w-[90%] z-50 rounded-2xl backdrop-blur-lg bg-gradient-to-r from-blue-500 to-black    shadow-xl transition-all duration-300 ease-in-out
-    ${scrolled ? "py-6 h-[5em] shadow-2xl" : "py-4 h-[4em] shadow-cyan-300"}
+    ${scrolled ? "h-[4em] shadow-2xl  py-3" : " h-[4em] shadow-cyan-300 py-3"}
     ${showHeader ? "translate-y-0" : "-translate-y-full"}
   `}
       >
         <div className="container mx-auto flex justify-between items-center px-6">
           {/* Logo */}
-          <Link
-            to="/"
-            data-aos="zoom-in"
-            className="text-lg font-bold flex flex-row gap-1 hover:opacity-80 transition-opacity"
-          >
-            <div className="bg-white px-1 py-0.5 text-blue-700 rounded-sm hover:scale-110">
-              PM
-            </div>
-            <div className="text-white">code</div>
+          <Link to="/" data-aos="zoom-in" className="">
+            <img
+              src="/public/images/pmcodelogo.png"
+              alt="pmcodelogo"
+              className=" "
+            />
           </Link>
 
           {/* Desktop Menu */}
